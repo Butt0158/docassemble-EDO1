@@ -1,0 +1,13 @@
+--- 
+mandatory: True
+question: Welcome!
+subquestion: |
+  Welcome to (Insert Name).  (Insert description of app)
+  ***Disclaimer:***  
+  **This advice is not to be taken as genuine legal advice and is not a substitute for you seeking independent legal advice.**
+
+  To continue you must accept these terms 
+buttons:
+  - "I accept": continue
+  - "I do not accept": exit
+--- 
