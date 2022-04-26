@@ -8,6 +8,7 @@ subquestion: |
 
   To continue you must accept these terms 
 buttons:
-  - "I accept": continue
-  - "I do not accept": exit
---- 
+  - "I accept": continue 
+  - "I do not accept": exit 
+    url: https://www.edo.org.au
+---
