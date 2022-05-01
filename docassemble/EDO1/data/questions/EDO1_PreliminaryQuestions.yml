@@ -1,15 +1,4 @@
 ---
-mandatory: true
-code: |
-  EDO1_disclaimer 
-  if EDO1_protect_trees == 'True':
-    if EDO1_district == 'False':
-      EDO1_exit_screen_2 
-  if EDO1_protect_trees == 'False':
-    EDO1_exit_screen
-  if EDO1_property == 'True':
-    EDO1_private
----
 question: Welcome!
 subquestion: |
   Welcome to (Insert Name).  (Insert description of app)
@@ -20,7 +9,7 @@ subquestion: |
 field: EDO1_disclaimer 
 buttons:
   - I accept: continue 
-  - I do not accept: exit 
+  - I do not accept: exit
     url: https://www.edo.org.au
 ---
 
@@ -48,6 +37,7 @@ fields:
       - Other: 'False'
   - "What is your postcode?": EDO1_postcode
     datatype: integer 
+    hint: 50XX
 ---
 Question: "What type of property is the tree located on?"  
 field: EDO1_property
@@ -61,6 +51,15 @@ choices:
   - Yours
   - Neighbours 
 --- 
+Question: Is the tree signficant or regulatory 
+subquestion: |
+ A signficant and regualtory tree are ... 
+field: EDO1_sigreg
+buttons:
+  - Significant: 'True'
+  - Regulatory: 'True'
+  - Unsure: 'False' 
+---
 event: EDO1_exit_screen
 question: This application is not for you 
 buttons:
@@ -74,3 +73,4 @@ buttons:
   - Exit: exit
     url: https://www.edo.org.au
   - Restart: restart
+--- 

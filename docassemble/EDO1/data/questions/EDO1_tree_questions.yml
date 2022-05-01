@@ -1,0 +1,14 @@
+---
+Question: "Does the tree have a singular or multiple trunks"  
+field: EDO1_trunk
+choices: 
+  - cats  
+  - dogs
+---
+Question: "What is the total circumference"
+field: EDO1_circumference
+buttons: 
+  - less than 2 meters 
+  - 2 meters or more
+  - 3 meters or more
+--- 
