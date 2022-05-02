@@ -1,0 +1,26 @@
+---
+mandatory: True
+question: |
+  Is the tree of concern one of the following 22 species?
+field: interrogatory
+buttons:
+  - "Box Elder": Box Elder 
+    image: Box Elder 
+  - "Silver Maple": Silver Maple  
+    image: Silver Maple 
+  - "Tree of Heaven": Tree of Heaven 
+    image: Tree of Heaven 
+  - "Evergreen Alder": Evergreen Alder 
+---
+image sets:
+  freepik:
+    images:
+      Box Elder: Acer_negundo_Box_Elder.jpeg 
+      Silver Maple: Acer_saccharinum_Silver_Maple.jpeg
+      Tree of Heaven: Ailanthus_altissima_Tree_of_heaven.jpeg
+---
+question: |
+  Your tree is exempt under legilsation, 
+  Goodbye 
+mandatory: true 
+
