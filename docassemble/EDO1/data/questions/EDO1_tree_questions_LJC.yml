@@ -1,0 +1,24 @@
+---
+
+Question: Tree Information  
+fields: 
+  - Does the tree have a singular or multiple trunks?: EDO1_trunk
+    datatype: radio
+    choices: 
+      - singular
+      - multiple
+  - What is the total circumference?: EDO1_circumference
+    datatype: radio
+    choices: 
+      - less than 2 meters
+      - 2 meters or more
+      - 3 meters or more
+  - Is the average circumference of the trunks greater than 625mm?: EDO1_Trunkcircum
+    show if: 
+      variable: EDO1_trunk
+      is: 'multiple'
+    datatype: radio
+    choices: 
+      - Yes
+      - No
+---
