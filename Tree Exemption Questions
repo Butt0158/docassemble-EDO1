@@ -1,0 +1,65 @@
+---
+code: |
+  if EDO1_PlanDes == 'True':
+    EDO1_significant
+  EDO1_Trunk1
+  EDO1_Trunkcircum
+  if EDO1_Trunkcircum == 'False':
+    EDO1_Trunkcircum2
+  if EDO1_Trunkcircum2 == 'False':
+    EDO1_exit_screenv2
+  if EDO1_Trunkcircum == 'True':
+    EDO1_regulated
+  if EDO1_Trunkcircum == 'Other':
+    EDO1_significant
+---
+Question: "Is the tree of concern one of the 10 trees in Part 10 of the Planning and Design Code?"  
+field: EDO1_PlanDes
+choices: 
+  - Yes: 'True'
+  - No: 'False'
+---
+question: |
+  Does the tree have a single or multi-trunk? 
+field: EDO1_Trunk1
+datatype: radio 
+choices: 
+- Multi
+- Single
+---
+question: |
+  What is the total circumference of the trunk 1 meter from the ground (waist height)?
+field: EDO1_Trunkcircum
+datatype: radio 
+choices: 
+- Less than 2.0 meters: 'False'
+- 2.0 meters or more: 'True'
+- 3.0 meters or more: 'Other'
+---
+question: |
+  Is the average circumference of the trunks greater than 625mm?
+field: EDO1_Trunkcircum2
+datatype: radio 
+choices: 
+- Yes: 'True'
+- No: 'False'
+---
+question: |
+  This tree is considered regulated!
+field: EDO1_regulated
+button: 
+- Good Job: 'True'
+---
+question: |
+  This tree is considered significant!
+field: EDO1_significant
+button: 
+- Good Job: 'True'
+---
+event: EDO1_exit_screenv2
+question: This application is not for you 
+buttons:
+  - Exit: exit
+    url: https://www.edo.org.au
+  - Restart: restart
+---
