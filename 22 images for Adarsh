@@ -1,0 +1,46 @@
+---
+mandatory: True
+question: |
+  Is the tree of concern one of the following 22 species?
+field: interrogatory
+buttons:
+  - "Box Elder": Box Elder 
+    image: Box Elder 
+  - "Silver Maple": Silver Maple  
+    image: Silver Maple 
+  - "Tree of Heaven": Tree of Heaven 
+    image: Tree of Heaven 
+  - "Evergreen Alder": Evergreen Alder 
+    image: Evergreen Alder 
+  - "European Nettle Tree": European Nettle Tree 
+    image: European Nettle Tree 
+  - "Chinese Nettle Tree": Chinese Nettle Tree
+    image: Chinese Nettle Tree 
+  - "Camphor Laurel": Camphor Laurel
+    image: Camphor Laurel 
+  - "Monterey Cypress": Monterey Cypress
+    image: Monterey Cypress
+  - "Moreton Bay Fig": Moreton Bay Fig 
+    image: Moreton Bay Fig 
+  - "Narrow-Leaved Ash": Narrow-Leaved Ash
+    image: Narrow-Leaved Ash
+---
+image sets:
+  freepik:
+    images:
+      Box Elder: Acer_negundo_Box_Elder.jpeg 
+      Silver Maple: Acer_saccharinum_Silver_Maple.jpeg
+      Tree of Heaven: Ailanthus_altissima_Tree_of_heaven.jpeg
+      Evergreen Alder: Alnus_acuminate_subsp._Glabrata_Evergreen_Alder.jpeg 
+      European Nettle Tree: Celtis_australis_European_Nettle_Tree.jpeg
+      Chinese Nettle Tree: Celtis_sinensis_Chinese_Nettle_Tree.jpeg
+      Camphor Laurel: Cinnamomum_camphora_Camphor_Laurel.jpeg
+      Monterey Cypress: Cupressus_macrocarpa_Monterey_Cypress.jpeg
+      Moreton Bay Fig: Ficus_macrophylla_Moreton_bay_fig.jpeg
+      Narrow-Leaved Ash: Fraxinus_angustifolia_ssp._Oxycarpa_desert_ash.jpeg
+---
+question: |
+  Your tree is exempt under legilsation, 
+  Goodbye 
+mandatory: true 
+
