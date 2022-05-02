@@ -1,17 +1,40 @@
+
 ---
-Question: "Is the tree dead or alive"
+Question: "Is the tree alive or dead"
 field: EDO1_dead_alive 
 buttons: 
-  - dead: 'False'
   - alive: 'True'
+  - dead: 'False' 
 --- 
-code: |
-  if EDO1_dead_alive == 'False':
-    EDO1_exitscreen_dead
---- 
-event: EDO1_exitscreen_dead
+question: "Is the tree located within 10 meters of an existing dwelling or in-ground swimming pool, except Willow Myrtle and Eculayptus" 
+field: EDO1_10_meters
+choices:
+  - Yes: 'True'
+  - No: 'False'
+---
+Question: "Is the tree located within 20 meters of a dwelling within a medium or high risk bushfire hazard area"
+field: EDO1_fire_hazard
+choices:
+  - Yes: 'True'
+  - No: 'False'
+---
+Question: "Does the department of transport and infrastructure plan on removing the tree"
+field: EDO1_department
+choices:
+  - Yes: 'True'
+  - No: 'False'
+---
+event: EDO1_exit_screen_dead
 Question: No approval is required to remove tree 
 buttons:
   - Exit: exit
     url: https://www.edo.org.au
   - Restart: restart
+---
+event: EDO1_exitscreen_4
+Question: Tree is exempt from protections under legislation. Development approval is not required for removal 
+buttons:
+  - Exit: exit
+    url: https://www.edo.org.au
+  - Restart: restart
+--- 

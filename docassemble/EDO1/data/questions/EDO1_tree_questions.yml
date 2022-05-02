@@ -2,13 +2,39 @@
 Question: "Does the tree have a singular or multiple trunks"  
 field: EDO1_trunk
 choices: 
-  - cats  
-  - dogs
+  - singular: 'True'  
+  - multiple: 'False'
 ---
 Question: "What is the total circumference"
 field: EDO1_circumference
 buttons: 
-  - less than 2 meters 
-  - 2 meters or more
-  - 3 meters or more
+  - less than 2 meters: '<2'
+  - 2 meters or more: '2+'
+  - 3 meters or more: '3+'
+--- 
+question: |
+  Is the average circumference of the trunks greater than 625mm?
+field: EDO1_multiple_circumference
+datatype: radio 
+choices: 
+- Yes: 'True'
+- No: 'False'
+---
+question: |
+  This tree is considered regulated!
+field: EDO1_regulated
+button: 
+- continue: continue 'True'
+---
+question: |
+  This tree is considered significant!
+field: EDO1_significant
+button: 
+- continue: continue 'True'
+---
+question: |
+  Tree is neither significant or regulatory
+field: EDO1_exit_screen_3
+button:
+  - bye: 
 --- 

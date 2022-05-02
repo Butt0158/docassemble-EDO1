@@ -2,7 +2,8 @@
 include:
   - EDO1_tree_questions.yml
   - EDO1_exception_questions.yml
-  - EDO1_PreliminaryQuestions.yml
+  - EDO1_preliminary_questions.yml
+  - EDO1_Final_Questions.yml
 ---
 mandatory: true
 code: |
@@ -16,6 +17,37 @@ code: |
     EDO1_private
   if EDO1_sigreg == 'False':
     EDO1_trunk
-  elif EDO1_sigreg == 'True':
-      EDO1_dead_alive
+    if EDO1_trunk == 'False':
+      EDO1_multiple_circumference
+    if EDO1_circumference == '3+':
+      EDO1_significant
+    if EDO1_circumference == '2+':
+      EDO1_regulated
+    if EDO1_circumference == '<2':
+      EDO1_exit_screen_3
+  EDO1_dead_alive
+  if EDO1_dead_alive == 'False':
+    EDO1_exit_screen_dead
+  if EDO1_10_meters == 'True':
+    EDO1_exitscreen_4
+  if EDO1_fire_hazard == 'True':
+    EDO1_exitscreen_4
+  if EDO1_department == 'True':
+    EDO1_exitscreen_4
+  EDO1_actions
+  if EDO1_actions == 'terminate':
+    EDO1_out_of_scope
+  if EDO1_actions == 'True':
+    if EDO1_30_removal == 'True':
+      EDO1_output_A
+    if EDO1_wood_removal == 'True':
+      EDO1_output_A
+    if EDO1_material_risk == 'True':
+      EDO1_output_A
+    if EDO1_material_risk == 'False':
+      EDO1_output_B
+  if EDO1_council_approval == 'True':
+    EDO1_output_A
+  EDO1_output_B  
+    
 ---

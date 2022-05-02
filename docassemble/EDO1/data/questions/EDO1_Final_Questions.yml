@@ -1,35 +1,35 @@
+
 ---
-mandatory: true
 question: What actions are currently being undertaken to the tree?
 fields: 
   - no label: EDO1_actions
     datatype: radio
     choices:
-    - Branch, limb lopping or maintenance pruning
-    - Removal, killing or destruction
-    - Ring barking or topping
-    - Any other substantial damage to a regulated tree, including to the root system
-    - Other
+    - Branch, limb lopping or maintenance pruning: 'True'
+    - Removal, killing or destruction 
+    - Ring barking or topping 
+    - Any other substantial damage to a regulated tree, including to the root system 
+    - Other: 'terminate'
 under: |
   Note: explanation of maintenance pruning
 ---
 Question: Has council approval been obtained?
 field: EDO1_council_approval
 choices:
-  - Yes
-  - No
+  - Yes: 'True'
+  - No: 'False'
 ---
 Question: Is less than 30% being removed?
 field: EDO1_30_removal
 choices:
-  - Yes
-  - No
+  - Yes: 'True'
+  - No: 'False'
 ---
 Question: Is dead or deceased wood being removed?
 field: EDO1_wood_removal
 choices:
-  - Yes
-  - No
+  - Yes: 'True'
+  - No: 'False'
 ---
 Question: Does the branch pose a material risk to buildings or persons?
 field: EDO1_material_risk
