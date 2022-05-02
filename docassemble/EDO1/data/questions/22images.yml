@@ -1,0 +1,86 @@
+---
+mandatory: True
+question: |
+  Is the tree of concern one of the following 22 species?
+field: interrogatory
+buttons:
+  - "Box Elder": Box Elder 
+    image: Box Elder 
+  - "Silver Maple": Silver Maple  
+    image: Silver Maple 
+  - "Tree of Heaven": Tree of Heaven 
+    image: Tree of Heaven 
+  - "Evergreen Alder": Evergreen Alder 
+    image: Evergreen Alder 
+  - "European Nettle Tree": European Nettle Tree 
+    image: European Nettle Tree 
+  - "Chinese Nettle Tree": Chinese Nettle Tree
+    image: Chinese Nettle Tree 
+  - "Camphor Laurel": Camphor Laurel
+    image: Camphor Laurel 
+  - "Monterey Cypress": Monterey Cypress
+    image: Monterey Cypress
+  - "Moreton Bay Fig": Moreton Bay Fig 
+    image: Moreton Bay Fig 
+  - "Desert Ash": Desert Ash
+    image: Desert Ash
+  - "Norfolk Island Hibiscus": Norfolk Island Hibiscus
+    image: Norfolk Island Hibiscus
+  - "Prickly-leaved Paperback": Prickly-leaved Paperback
+    image: Prickly-leaved Paperback
+  - "Monterey Pine": Monterey Pine
+    image: Monterey Pine
+  - "London Plane": London Plane
+    image: London Plane
+  - "White popular": White popular
+    image: White popular
+  - "Lombardy Poplar": Lombardy Poplar
+    image: Lombardy Poplar
+  - "Black Locust": Black Locust
+    image: Black Locust
+  - "Weeping Willow": Weeping Willow
+    image: Weeping Willow
+  - "Pencil Willow": Pencil Willow
+    image: Pencil Willow
+  - "Crack Willow": Crack Willow
+    image: Crack Willow
+  - "Basket Willow": Basket Willow
+    image: Basket Willow
+  - "Golden Willow": Golden Willow
+    image: Golden Willow
+  - "Peppercorn Tree": Peppercorn Tree
+    image: Peppercorn Tree
+  - "None of these": none of these
+    image: none of these 
+---
+image sets:
+  freepik:
+    images:
+      Box Elder: Acer_negundo_Box_Elder.jpeg 
+      Silver Maple: Acer_saccharinum_Silver_Maple.jpeg
+      Tree of Heaven: Ailanthus_altissima_Tree_of_heaven.jpeg
+      Evergreen Alder: Alnus_acuminate_subsp._Glabrata_Evergreen_Alder.jpeg 
+      European Nettle Tree: Celtis_australis_European_Nettle_Tree.jpeg
+      Chinese Nettle Tree: Celtis_sinensis_Chinese_Nettle_Tree.jpeg
+      Camphor Laurel: Cinnamomum_camphora_Camphor_Laurel.jpeg
+      Monterey Cypress: Cupressus_macrocarpa_Monterey_Cypress.jpeg
+      Moreton Bay Fig: Ficus_macrophylla_Moreton_bay_fig.jpeg
+      Desert Ash: Fraxinus_angustifolia_ssp._Oxycarpa_desert_ash.jpeg
+      Norfolk Island Hibiscus: Lagunaria_patersonia_Norfolk_Island_Hibiscus.jpg
+      Prickly-leaved Paperback: Melaleuca_styphelioides_Prickly-leaved_Paperback.jpg 
+      Monterey Pine: Pinus_Radiata_Radiata_Pine_Monterey_Pine.jpg
+      London Plane: Platanus_x_acerifolia_London_Plane.jpg
+      White popular: Populus_alba_White_poplar.jpg
+      Lombardy Poplar: Populus_nigra_var._italica_Lombardy_Poplar.jpg
+      Black Locust: Robinia_pseudoacacia_Black_Locust.jpg
+      Weeping Willow: Salix_babylonica_Weeping_Willow.jpg
+      Pencil Willow: Pencil_Willow.jpg
+      Crack Willow: Salix_fragilis_Crack_Willow.jpg
+      Basket Willow: Salix_X_rubens_White_Crack_Willow_Basket_Willow.jpg
+      Golden Willow: Golden_Weeping_Willow.jpg
+      Peppercorn Tree: Schinus_Areira_Peppercorn_Tree.jpg    
+---
+question: |
+  Your tree is exempt under legislation, 
+  Goodbye 
+mandatory: true 
