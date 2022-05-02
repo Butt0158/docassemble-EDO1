@@ -43,7 +43,7 @@ def find_package_data(where='.', package='', exclude=standard_exclude, exclude_d
     return out
 
 setup(name='docassemble.EDO1',
-      version='0.0.1',
+      version='0.0.2',
       description=('A docassemble extension.'),
       long_description='# docassemble.EDO1\r\n\r\nA docassemble extension.\r\n\r\n## Author\r\n\r\nJordan Buttery, butt0158@flinders.edu.au\r\n\r\n',
       long_description_content_type='text/markdown',
