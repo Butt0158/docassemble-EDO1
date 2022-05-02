@@ -1,0 +1,76 @@
+---
+question: Welcome!
+subquestion: |
+  Welcome to (Insert Name).  (Insert description of app)
+  ***Disclaimer:***  
+  **This advice is not to be taken as genuine legal advice and is not a substitute for you seeking independent legal advice.**
+
+  To continue you must accept these terms 
+field: EDO1_disclaimer 
+buttons:
+  - I accept: continue 
+  - I do not accept: exit
+    url: https://www.edo.org.au
+---
+
+
+Question:
+Subquestion: | 
+    *This Application will only provide information on protecting trees and will not provide information on how to remove a tree.*
+    
+    Are you here to protect tree(s) 
+field: EDO1_protect_trees    
+buttons: 
+  - Yes: 'True'
+  - No: 'False'
+   
+--- 
+question: |
+  Answer the following.
+fields:
+  - "What is your district?": EDO1_district 
+    datatype: radio
+    choices:
+      - Adelaide
+      - Greater Adelaide
+      - Mount Barker 
+      - Other: 'False'
+  - "What is your postcode?": EDO1_postcode
+    datatype: integer 
+    hint: 50XX
+---
+Question: "What type of property is the tree located on?"  
+field: EDO1_property
+choices: 
+  - Private property: 'True'
+  - Public property: 'False'
+---
+Question: "Who's property is it"
+field: EDO1_private 
+choices:
+  - Yours
+  - Neighbours 
+--- 
+Question: Is the tree signficant or regulatory 
+subquestion: |
+ A signficant and regualtory tree are ... 
+field: EDO1_sigreg
+buttons:
+  - Significant: 'True'
+  - Regulatory: 'True'
+  - Unsure: 'False' 
+---
+event: EDO1_exit_screen
+question: This application is not for you 
+buttons:
+  - Exit: exit
+    url: https://www.edo.org.au
+  - Restart: restart
+--- 
+event: EDO1_exit_screen_2 
+question: This application only applies to urban areas 
+buttons:
+  - Exit: exit
+    url: https://www.edo.org.au
+  - Restart: restart
+--- 

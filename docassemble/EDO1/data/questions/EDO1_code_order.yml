@@ -1,0 +1,28 @@
+---
+include:
+  - EDO1_tree_questions.yml
+  - EDO1_exception_questions.yml
+  - EDO1_preliminary_questions.yml
+---
+mandatory: true
+code: |
+  EDO1_disclaimer 
+  if EDO1_protect_trees == 'True':
+    if EDO1_district == 'False':
+      EDO1_exit_screen_2 
+  if EDO1_protect_trees == 'False':
+    EDO1_exit_screen
+  if EDO1_property == 'True':
+    EDO1_private
+  if EDO1_sigreg == 'False':
+    EDO1_trunk
+    if EDO1_circumference == '3+':
+      EDO1_significant
+    if EDO1_circumference == '2+':
+      EDO1_regulated
+    if EDO1_circumference == '<2':
+      EDO1_exit_screen_3
+  EDO1_dead_alive   
+
+
+---

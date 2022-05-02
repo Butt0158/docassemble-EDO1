@@ -1,0 +1,19 @@
+---
+Question: "Is the tree dead or alive"
+field: EDO1_dead_alive 
+buttons: 
+  - dead: 'False'
+  - alive: 'True'
+--- 
+code: |
+  if EDO1_dead_alive == 'False':
+    EDO1_exitscreen_dead
+--- 
+question: 
+---
+event: EDO1_exitscreen_dead
+Question: No approval is required to remove tree 
+buttons:
+  - Exit: exit
+    url: https://www.edo.org.au
+  - Restart: restart
