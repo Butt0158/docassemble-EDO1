@@ -1,0 +1,43 @@
+--- 
+mandatory: true
+question: Exemptions
+fields: 
+  - "Is the tree located in a medium or High Risk Bushfire Hazard area?": EDO1_Bushfire_Hazard_area
+    datatype: yesnoradio
+  - "Is the tree located within twenty meters of an existing dwelling": EDO1_fire_hazard
+    datatype: yesnoradio
+    show if: EDO1_Bushfire_Hazard_area
+  - "Is the tree located within ten meters of an existing dwelling or in-ground swimming pool *except Willow Myrtle and Eucalyptus?*": EDO1_10_meters
+    show if: 
+      variable: EDO1_Bushfire_Hazard_area
+      is: False
+    datatype: yesnoradio
+  - "Is the tree a Willow Myrtle or Eucalyptus?": EDO1_WM_E
+    show if: EDO1_10_meters
+    datatype: noyesradio
+---
+question: "Does the Department of Transport and Infristructure plan on removing this tree?"
+field: EDO1_department
+choices:
+  - Yes: 'True'
+  - No: 'False'
+---
+event: EDO1_exitscreen_4
+question: Tree can be removed
+subquestion: |
+  This tree is exempt from protections under legislation. Development approval is not 
+  require for removal.
+buttons: 
+  - Exit: exit
+    url: https://www.edo.org.au
+  - Restart: restart
+---
+mandatory: true
+code: |
+  EDO1_Bushfire_Hazard_area
+  if EDO1_fire_hazard == True or EDO1_WM_E == False:
+    EDO1_exitscreen_4
+  if EDO1_fire_hazard == False or EDO1_WM_E == False or EDO1_10_meters == False:
+    EDO1_department
+---
+    
