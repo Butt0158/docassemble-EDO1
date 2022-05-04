@@ -1,0 +1,194 @@
+#all the addresses in one spot
+---
+include:
+  - FLAC3_endpoints.yml
+  - FLAC3_questions.yml
+---
+#all the addresses so they can be formatted correctly
+objects:
+  - address: Address
+  - naddress: Address
+  - baddress: Address
+  - faddress: Address
+---
+event: endpoint_1
+question: Your Form 2 has been created!
+subquestion: |
+  Based on your responses, a Form 2 has been recommended as the best option to proceed. This is a form created in accordance with the *Fencing Act 1975* (SA) which is used to give notice to your neighbour that you want to repair a boardering fence.
+  
+  Please confirm that your answers below are correct to the best of your knowledge.
+
+  Information | Your Answers
+  ------------|-------------
+  Your Name|${ FLACname }   [edit](${ url_action('FLACname') })
+  Your Address|${ address }  [edit](${ url_action('address.address') })
+  Neighbour's Name|${ FLACneighbourname }   [edit](${ url_action('FLACneighbourname') })
+  Neighbouring Property Address|${ faddress }   [edit](${ url_action('faddress.address') })
+  Neighbour's Postal Address|${ naddress }   [edit](${ url_action('naddress.address') })
+  Length and Position of proposed fence|The fence will ${ FenceLength}m long, ${ FenceHeight }m tall and at a position that is ${ FencePosition } between the properties.   [edit](${ url_action('FenceLength') })
+  Type of Fence| The type of fence is ${ FenceType } [edit](${ url_action('FenceType') })
+  Cost of Fence| $ ${ FenceCost}    [edit](${ url_action('FenceCost') })
+  Amount claiming| $ ${ Fencecostclaiming }   [edit](${ url_action('Fencecostclaiming') })
+  Name of Contractor| ${Fencecontractor} [edit](${ url_action('Fencecontractor') })
+  Phone Number of Contractor | ${ContractorNumber }   [edit](${ url_action('Fencecontractor') })
+  Address of Contractor | ${ baddress }   [edit](${ url_action('baddress.address') })
+  Date|${ today(format='d MMMM yyyy') }
+  
+  Please note that you must **attach the contractor's quote to your completed form** *prior* to the service of this form to the owner of the neighbouring land.
+  
+  If you do not, within thirty days after service of this form, receive a response from the owner of the neighbouring land, it will be taken that the owner of the neighbouring land has agreed to your proposals. The owner of the neighbouring land will then be bound thereby.
+  
+  You can download your form below.
+attachment:
+  name: Form 2 Notice
+  filename: form_2
+  docx template file: FLACForm_2.docx
+  valid formats:
+    - pdf
+    - docx
+
+
+buttons: 
+  - Exit: exit
+    url: https://www.flinderslegalcentre.net.au/dir/
+  - Restart: restart
+
+---
+#endpoint to create Form 3 which is the response notice
+event: endpoint_3
+question: A Form 3 has been created for you!
+subquestion: |
+  Based on your responses, a Form 3 has been produced for you. The purpose of the Form 3 is to act as a formal cross notice that you are able to send back to the person or business that served you the original notice. 
+  
+  Please confirm that your answers below are correct to the best of your knowledge.
+  
+  Information|Your Answers
+  ------------|-------------
+  Your Name|${ FLACname }  [edit](${ url_action('FLACname') })
+  Your Address|${ address } [edit](${ url_action('address.address') })
+  Neighbour's Name|${ FLACneighbourname }   [edit](${ url_action('FLACneighbourname') })
+  Date on the notice| ${ FLACF3notice_date}   [edit](${ url_action('FLACnotice_date') })
+  Your objections to the notice| ${FLAC_objections}    [edit](${ url_action('FLAC_objections') })
+  %if FLAC_counter !='':
+  Your counter-proposals (if any)| ${FLAC_counter}   [edit](${ url_action('FLAC_counter') })
+  %endif
+  
+  Please note that you can attach an alternative contractor's quote to your completed form *prior* to the service of this form to the owner of the neighbouring land.
+  
+  If you do not, within thirty days after service of this form, receive a response from the owner of the neighbouring land, it will be taken that the owner of the neighbouring land has agreed to your proposals. 
+  
+  
+  You are now able to download the Form 3 notice below.
+
+attachment:
+  name: Form 3 Notice
+  filename: form_3
+  docx template file: FLACForm_3.docx
+  valid formats:
+    - pdf
+    - docx
+
+buttons:
+  - Exit: exit
+    url: https://www.flinderslegalcentre.net.au/dir/
+  - Restart: restart
+---
+#formatted so the user can enter their address easily
+question: |
+  What is your address?
+fields:
+  - Address: address.address
+    default: 123 Flinders Drive
+  - Unit: address.unit
+    required: False
+  - Suburb: address.city
+    default: Bedford Park
+  - State: address.state
+    default: South Australia
+    choices:
+      - South Australia
+      - New South Wales
+      - Queensland
+      - Victoria
+      - Western Australia
+      - Tasmania
+      - Australian Capital Territory
+      - Northen Territory
+    required: False
+  - Postal Code: address.postal_code
+    default: 5000
+    required: True
+
+---
+question: |
+  What is the neighbouring property's address?
+subquestion: |
+  The address where the fence is located.
+fields:
+  - Address: faddress.address
+    default: 124 Flinders Drive
+  - Unit: faddress.unit
+    required: False
+  - Suburb: faddress.city
+    default: Bedford Park
+  - State: faddress.state
+    default: South Australia
+    choices:
+      - South Australia
+  - note: This must be a South Australian address.
+    required: False
+  - Postal Code: faddress.postal_code
+    default: 5000
+    required: False
+---
+question: |
+  What is your neighbour's postal address?
+fields:
+  - Address: naddress.address
+    default: 789 Sunset Drive
+  - Unit: naddress.unit
+    required: False
+  - Suburb: naddress.city
+    default: Adelaide
+  - State: naddress.state
+    default: South Australia
+    choices:
+      - South Australia
+      - New South Wales
+      - Queensland
+      - Victoria
+      - Western Australia
+      - Tasmania
+      - Australian Capital Territory
+      - Northen Territory
+    required: False
+  - Postal Code: naddress.postal_code
+    default: 5000
+    required: False
+---
+Question: What is the contractor's address?
+fields:
+  - Address: baddress.address
+    default: 123 Builders Drive
+  - Unit: baddress.unit
+    required: False
+  - Suburb: baddress.city
+    default: Bedford Park
+  - State: baddress.state
+    default: South Australia
+    choices:
+      - South Australia
+      - New South Wales
+      - Queensland
+      - Victoria
+      - Western Australia
+      - Tasmania
+      - Australian Capital Territory
+      - Northen Territory
+    required: False
+  - Postal Code: baddress.postal_code
+    default: 5000
+    required: True
+
+---
+---

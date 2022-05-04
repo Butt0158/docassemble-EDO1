@@ -1,0 +1,103 @@
+# all the endpoints
+---
+#other files included
+include:
+- FLAC3_questions.yml
+
+---
+#formats the notice date AGLC style 
+code: |
+  FLACF3notice_date = format_date(FLACnotice_date,format='d MMMM yyyy')
+  FLACF3notice_dayof = day_of(FLACnotice_date)
+  FLAC3notice_dayof_str = ''
+  if int(FLACF3notice_dayof)%10 == 1:
+    FLAC3notice_dayof_str = str(FLACF3notice_dayof) + "st"
+  elif int(FLACF3notice_dayof)%10 == 2:
+    FLAC3notice_dayof_str = str(FLACF3notice_dayof) + "nd" 
+  elif int(FLACF3notice_dayof)%10 == 3:
+    FLAC3notice_dayof_str = str(FLACF3notice_dayof) + "rd"   
+  else:
+    FLAC3notice_dayof_str = str(FLACF3notice_dayof) + "th"
+  FLACF3notice_monthof = format_date(FLACnotice_date,format='MMMM yyyy')
+
+---
+#default screen when things are too complicated for the application
+event: endpoint_4
+question: Too Complex!
+subquestion: |
+  Unfortunately, the option you have selected is a situation slightly too complex to be solved by this application. 
+  
+  Please click the consult button below to organise an appointment with the Flinders Legal Centre for assistance on this issue. 
+
+buttons:
+  - Consult: exit
+    url: https://www.flinderslegalcentre.net.au/dir/home/appointments/
+  - Restart: restart 
+---
+#when the user caused the damage to the fence themselves
+event: endpoint_5
+question: You are unlikely to be entitled to compensation due to your damage. 
+subquestion: |
+  You are unlikely to receive compensation due to your damage.
+  
+  Please click the consult button below to organise an appointment with the Flinders Legal Centre for assistance on this issue.  
+
+buttons:
+  - Consult: exit
+    url: https://www.flinderslegalcentre.net.au/dir/home/appointments/
+  - Restart: restart
+---
+#when the neighbour has caused the damage to the fence
+event: endpoint_6
+question: Your neighbour has caused damage. 
+subquestion: |
+  You have reached this point because your neighbour has caused damage to your fence, likely resulting in costs in reparation.
+
+  Based on this, we recommend that you discuss your options with the Flinders Legal Centre. 
+
+buttons:
+  - Consult: exit
+    url: https://www.flinderslegalcentre.net.au/dir/home/appointments/
+  - Restart: restart
+---
+event: endpoint_7
+question: Unsure who the neighbour is?
+subquestion: |
+  As you are not sure who the owner of the neighbouring land is, unfortunately you are unable to properly complete the next steps. 
+
+  If you do not know the owner of the neighbouring land, you have the following options:
+  	
+    a)  place a notice of intention (form 2) to perform fencing work in an obvious place on the neighbouring land. If no cross-notice is serviced upon you, you may proceed with the work as if the owner agreed.
+    
+    b) you may also apply for the court to make a decision (This is called a  ‘determination’). The court may then order the cost of the fencing work to be paid by the neighbouring land owner. It is recommended to discuss this option with Flinders Legal Centre. 
+
+  Please click the consult button below to organise an appointment with the Flinders Legal Centre for assistance. 
+
+buttons:
+  - Consult: exit
+    url: https://www.flinderslegalcentre.net.au/dir/home/appointments/
+  - Restart: restart
+---
+#emergency fencing endpoint for when someone selects this option
+event: endpoint_8
+question: You have chosen that you require emergency fencing.
+subquestion: |
+  You have selected that you require emergency fencing. 
+ 
+  At law, this is addressed in s16 of the *Fencing Act*, which states that in case of an emergency you are entitled to repair the fence adjoining two properties without notice and still recover the amount of money that the law would establish that the adjoining owner would be liable to pay. Traditionally, this is half the cost.
+
+  However, what does constitute an emergency is not defined. 
+
+  It is important that you have considered why this situation is urgent and are able to justify this. An example of an urgent situation would be where pets or livestock were at risk of escaping without a fence.
+
+  You are able to go ahead with the repair in an urgent situation without informing your neighbour, but it is also important to take all reasonable steps to communicate with your neighbour once the fence has been repaired and inform them of what has occurred, what the next steps are and whether you plan to seek financial contributions from them.
+
+  For further information and clarification on your particular situation [click here.](https://lsc.sa.gov.au/resources/FencesandtheLawBooklet.pdf)
+
+  If you wish to talk to Flinders Legal Centre then click consult to make a booking.
+
+
+buttons:
+  - Consult: exit
+    url: https://www.flinderslegalcentre.net.au/dir/home/appointments/
+  - Restart: restart

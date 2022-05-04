@@ -1,0 +1,195 @@
+---
+#image source for the header
+objects:
+  - FLAClogo: DAStaticFile.using(filename='FLAC3.png')
+---
+#for the header image
+mandatory: True
+code: |
+  set_parts(logo='<img src="' + FLAClogo.url_for() + '" style="height: 55px;">')
+---
+# Remove debugging and logging in features
+features:
+  css: FLAC3.css
+  debug: False
+  hide standard menu: True
+  cache documents: False
+---
+#footer details
+default screen parts:
+  post: |
+    <div style="display: flex; height: 200px; align-items: flex-end; flex-direction: row-reverse">
+    <div style="margin: 5px"><img src="https://staff.flinders.edu.au/etc.clientlibs/flinders/clientlibs/clientlib-site/resources/images/flinderuni_main_logo_black.png" height="40">
+    </div>
+    <div style="margin: 5px; text-align: right; font-size: 90%;">
+    <cite><small><i>
+    Developed by Flinders University in collaboration with Flinders Legal Centre
+    </i></small></cite>
+    </div>
+    </div>
+
+---
+#other files
+include:
+- FLAC3_questions.yml
+- FLAC3_endpoints.yml
+- FLAC3_addresses.yml
+---
+#definitions of terms to help user understand they show as green words
+terms:
+  Full name: First and Last name.
+  contractor: Professional who is going to build the fence.
+  neighbour: The owner of the land you share a boundary with.
+---
+metadata:
+  title: |
+    FENCEY: Easy Fencing!
+  short title: |
+    FENCEY
+  description: |
+    This application is for people going to Flinders Legal Centre for fencing issues.
+  authors:
+    - name: Annarose De Ionno
+      organization: Flinders University
+    - name: Josephine Males
+      organization: Flinders University
+    - name: Rumbi Sekete
+      organization: Flinders University
+    - name: Nikki Esmaeili
+      organization: Flinders University
+    - name: Chloe Tunstill
+      organization: Flinders University
+    - name: Katie Henthorn
+      organization: Flinders University
+  revision_date: 2021-10-24
+
+---
+#welcome screen
+mandatory: True
+decoration: FLAC3.png
+question:  |
+  **Welcome to Fencey!**
+subquestion: |
+  
+  This app is designed to help you with the initial steps of your fencing dispute and to guide you through the dispute process. 
+  
+  A fencing dispute can relate to the erection, replacement and maintenance of fences. This app will ask a number of prompting questions to guide you to either completing a relevant form or directing you back to the Flinders Legal Centre to make an appointment.
+  
+  If you are not the owner of the property you reside at this application is not for you and we recommended reaching out to the legal owner of the land.
+  
+  **DISCLAIMER:** 
+  
+  * This app does not constitute legal advice. 
+  * This information is only valid for residential properties in South Australia.
+  
+  Do you understand and consent to proceed?
+
+buttons:
+  - Yes: continue
+  - No: exit
+    url: https://www.flinderslegalcentre.net.au/dir/
+---
+#second screen asks user if they've spoken to neighbours
+mandatory: True
+question: |
+  #### Have you tried speaking with your neighbours?
+subquestion: |
+  **Talking to your {neighbour} is really important.** The purpose of the *Fencing Act* is to provide the assistance required when mitigating disputes between you and your neighbour in order to provide financial compensation at the end of the dispute. It is for this reason that we recommend that the first step is talking to your neighbour.
+
+  If you go through the legal process, then at the end of it you are bound by the legal process. If you informally go through an agreement, then you are free to make any agreement suit you suit you.
+
+  **Tips for talking to your neighbour:**
+  
+  * Don’t bring up disputes that have happened in the past with your neighbour! 
+  * Keep the chat friendly but focused on the fence and the issues at hand.
+  * Make sure the deal is mutually beneficial. Fence repairs can be expensive, so going in with a quote or with a budget can be a really helpful tool. 
+  * Make sure to consider what your neighbours budget is as well.
+  * If the owner of the neighbouring land is a business, put all of your communication in writing to them. If you are unsure on how to proceed in engaging with a business, then filling out a form through this app would be able to provide that assistance. 
+  
+  **Have you spoken with your neighbours?**
+yesno: FLACneighbourstalk
+
+---
+question: |
+  #### You have not attempted to speak with your {neighbour}!
+subquestion: |
+  ###### Before commencing legal proceedings, it is important that you have tried to resolve your dispute privately. Here are some reasons why:
+  - While legal proceedings are sometimes necessary to solve disputes, it is important, first, to attempt to maintain friendly neighbourly relations! 
+  - Avoid conflict and unfriendly relations with the owner of the neighbouring land initiating a friendly conversation with them about your fencing dispute.
+  - It is important to remember that what you do about your fence will impact the owner of your neighbouring land! Even if your neighbour has not paid for the fence, it is still regarded as a joint asset.
+  ###### Your neighbour has no obligation to pay any sum towards the fence unless:
+  * They have agreed to pay; or
+  * The proper procedure so requires, and this has been followed; or
+  * It is ordered by the Court.
+	
+  Having a conversation and getting their consent is the easiest and most efficient way!
+  
+  If you are struggling to get your neighbours consent, consider using the form process. If your neighbour refuses to respond to a formal notice within 30 days, then it is assumed by the court that they have consented to the notice and you are able to proceed.
+  
+  If there is further disputes, you can also consider mediation.
+
+field: FLACtalk
+buttons:
+  - "I understand and wish to continue": True
+    
+---
+#main code that controls the application
+mandatory: True
+code: |
+  if FLACneighbourstalk:
+    if FLACformtype == 'I would like to replace my fence as it is damaged.':
+      if FLACdamage == 'Yes, I did':
+        endpoint_5
+      elif FLACdamage == 'Yes, neighbour did':
+        endpoint_6
+      else:
+        if FLACneighbour == True:
+          if FLACelig == True:
+            endpoint_4
+          else:
+            endpoint_1
+        else:
+          endpoint_7
+    elif FLACformtype == 'I have received a fencing notice from my neighbour and do not agree with it.':
+      if FLACform3_30days == True:
+        endpoint_4
+      else:
+        if FLACelig == True:
+          endpoint_4
+        else:
+          endpoint_3
+    elif FLACformtype == 'I require emergency fencing.':
+      endpoint_8
+    else:
+      endpoint_4
+  else:
+    if FLACtalk:
+      if FLACformtype == 'I would like to replace my fence as it is damaged.':
+        if FLACdamage == 'Yes, I did':
+          endpoint_5
+        elif FLACdamage == 'Yes, neighbour did':
+          endpoint_6
+        else:
+          if FLACneighbour == True:
+            if FLACelig == True:
+              endpoint_4
+            else:
+              endpoint_1
+          else:
+            endpoint_7
+      elif FLACformtype == 'I have received a fencing notice from my neighbour and do not agree with it.':
+        if FLACform3_30days == True:
+          endpoint_4
+        else:
+            if FLACelig == True:
+              endpoint_4
+            else:
+              endpoint_3
+      elif FLACformtype == 'I require emergency fencing.':
+        endpoint_8
+      else:
+        endpoint_4
+    else:
+      endpoint_4
+---
+

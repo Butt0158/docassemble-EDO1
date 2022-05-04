@@ -1,0 +1,146 @@
+---
+include:
+  - FLAC3_endpoints.yml
+  - FLAC3_addresses.yml
+---
+#name of the user and used for both form 2 & 3
+question: What is your {full name}?
+fields:
+ - Full name: FLACname
+   default: Bob Klein
+---
+#name of the user's name that they are writing the notice to
+question: What is your neighbour's name? 
+subquestion: If your neighbour is a business, please state the business name.
+fields:
+ - Full name: FLACneighbourname
+   default: Jane Smith
+---
+#guides the user to the right direction, some of these options are out of FLAC3 area but at a later time can be linked to previous FLAC projects to make it cohesive and direct user to the right source
+question: What is your fencing issue?
+field: FLACformtype
+choices:
+  - I would like to build a new fence.
+  - I would like to replace my fence as it is damaged.
+  - I would like to replace my fence. There is nothing wrong with the current fence. 
+  - I have received a fencing notice from my neighbour and do not agree with it.
+  - I require emergency fencing.
+---
+#for form 3 it must be less than thirty days since receiving the notice
+question: |
+  How long has it been since you have received a notice of intention from your neighbour?
+subquestion: |
+  It must be less than 30 days since you received the notice from your neighbour to then be able to respond with a Form 3 notice. If it has been longer you will be directed to the Flinders Legal Centre.
+field: FLACform3_30days
+buttons:
+ - "More than 30 days": True
+ - "Less than 30 days": False
+---
+#eligibility question to ensure the user does not have a super complicated case as these factors can change what law is applicable
+question: Does your property fit any of these three situations?
+subquestion: |
+  ** Tenant:**
+  
+  If you are a tenant please contact your landlord in relation to your fencing related questions. 
+  
+  ** Adjoining Crown land:**
+  
+  Crown land is any land that the State Government owns and manages. This includes land dedicated to custodian purposes such as parks, community halls, sporting grounds and war memorials. It also includes national parks and all other public land properties. 
+  
+  ** Strata Unit:** 
+  
+  Most apartments, units and townhouses are Strata Units and will have a Strata management company. If you pay Strata fees this is most likely you or please double check if you live in an apartment, unit or townhouse.
+yesno: FLACelig
+---
+#also eligibility question to ensure the user is not guided to the wrong form if it may not be applicable
+question: Did you or your neighbour cause the damage to the fence?
+field: FLACdamage
+choices:
+  - Yes, I did
+  - Yes, neighbour did
+  - No, neither at fault
+default: No, neither at fault
+---
+#to serve a notice the user must know the neighbour or else follow steps to find out who the neighbour is and ensure it is addressed to the right person
+question: Do you know who your neighbour is?
+subquestion: |
+  It is important to know who your neighbour is to properly identify who is the owner of the neighbouring land. 
+
+  If your neighbour owns the land, then you need to contact them directly. 
+  
+  
+  If your neighbour is a tenant, then you need to contact your neighbour's landlord. 
+
+yesno: FLACneighbour
+---
+question: Fence Information
+fields:
+  - "How long will your fence be in metres?": FenceLength
+    hint: e.g. 2 or 3
+    datatype: number
+    default: 3
+  - "How tall will your fence be in metres?": FenceHeight
+    hint: e.g. 1.5 or 2
+    datatype: number
+    default: 1.5
+  - note: A fence higher than 1.8m may need additional council approval. 
+  - "What is the position?": FencePosition
+    datatype: pulldown
+    choices:
+      - north of my property
+      - south of my property
+      - east of my property
+      - west of my property
+    default: south of my property
+  - "What type of fence is it?": FenceType
+    hint: e.g. A wooden fence painted white
+    input type: area
+    default: a wooden fence painted white
+  
+---
+#cost of fence page, codded to ensure that it is all currency
+question: What is the cost of the fence?
+fields:
+  - Cost of Fence: FenceCost
+    datatype: currency
+    min: 0
+    default: 5000
+  - Cost you are claiming from your neighbour: Fencecostclaiming
+    datatype: currency
+    min: 0
+    default: 2500
+---
+#curly brackets is for the term definition
+question: What is the {contractor}'s name?
+fields:
+  - Business Name: Fencecontractor
+    default: John Does Fences
+  - Business Phone Number: ContractorNumber
+    default: '0412345123'
+
+---
+question: What are your objections to your neighbours notice to repair the fence?
+fields:
+  - Your objections: FLAC_objections
+    hint: e.g. The suggested cost is too expensive, I do not approve of the contractor
+    default: The suggested cost is too expensive
+    input type: area
+---
+#for form 3
+question: What are your counter proposals?
+subquestion: |
+   **Note.** You are not required to submit counter proposals. If you do not have a solution but are willing to enter into negotiations with your neighbour about this, then insert this into the field. 
+fields:
+  - Your suggestions: FLAC_counter
+    hint: e.g. Insert details of another contactor, suggest a different fence style
+    default: I would rather the fence be painted black.
+    input type: area
+    required: False
+---
+#date for form 3
+question: What is the date on the notice you received?
+fields:
+  - Date: FLACnotice_date
+    datatype: date
+    default: 21/10/2021
+---
