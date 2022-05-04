@@ -33,9 +33,6 @@ fields:
       - Greater Adelaide
       - Mount Barker 
       - Other: 'False'
-  - "What is your postcode?": EDO1_postcode
-    datatype: integer 
-    hint: 50XX
 ---
 Question: "What type of property is the tree located on?"  
 field: EDO1_property
@@ -43,12 +40,6 @@ choices:
   - Private property: 'True'
   - Public property: 'False'
 ---
-Question: "Who's property is it"
-field: EDO1_private 
-choices:
-  - Yours
-  - Neighbours 
---- 
 Question: Is the tree signficant or regulatory 
 subquestion: |
  A signficant and regualtory tree are ... 

@@ -13,8 +13,7 @@ code: |
       EDO1_exit_screen_2 
   if EDO1_protect_trees == 'False':
     EDO1_exit_screen
-  if EDO1_property == 'True':
-    EDO1_private
+  EDO1_property
   if EDO1_sigreg == 'False':
     EDO1_trunk
     if EDO1_trunk == 'False':
@@ -28,6 +27,8 @@ code: |
   EDO1_dead_alive
   if EDO1_dead_alive == 'False':
     EDO1_exit_screen_dead
+  if EDO1_interrogatory == 'False':
+    EDO1_trees_end
   if EDO1_10_meters == 'True':
     EDO1_exitscreen_4
   if EDO1_fire_hazard == 'True':
