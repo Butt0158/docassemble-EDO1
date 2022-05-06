@@ -1,16 +1,28 @@
 ---
-Question: "Does the tree have a singular or multiple trunks"  
+question: "Is the tree of concern listed on the PlanSA Part 10 Significant Tree list"
+subquestion: "Please click [here](https://code.plan.sa.gov.au/home/browse_the_planning_and_design_code?code=browse
+) to view the list"
+field: EDO1_Part10
+choices:
+  - The Tree is not on the list: 'True'
+  - The Tree is on the list: 'False'
+---
+Question: "Does the tree of concern have a [singular](https://www.legislation.sa.gov.au/__legislation/lz/c/r/planning%20development%20and%20infrastructure%20(general)%20regulations%202017/current/2017.24.auth.pdf) trunk or multiple "  
 field: EDO1_trunk
 choices: 
   - singular: 'True'  
   - multiple: 'False'
 ---
-Question: "What is the total circumference"
+Question: "What Is The Total Circumference Of The Trunk(s) Measured At A Point 1 Meter Above Natural Ground Level?"
 field: EDO1_circumference
-buttons: 
+choices: 
   - less than 2 meters: '<2'
   - 2 meters or more: '2+'
   - 3 meters or more: '3+'
+  
+  
+post: |
+  *Please view section 3F(1) found  [here](https://www.legislation.sa.gov.au/__legislation/lz/c/r/planning%20development%20and%20infrastructure%20(general)%20regulations%202017/current/2017.24.auth.pdf) for more information* 
 --- 
 question: |
   Is the average circumference of the trunks greater than 625mm?

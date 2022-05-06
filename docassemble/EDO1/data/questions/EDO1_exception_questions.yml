@@ -1,7 +1,7 @@
 ---
 Question: "Is the tree alive or dead"
 field: EDO1_dead_alive 
-buttons: 
+choices: 
   - alive: 'True'
   - dead: 'False' 
 --- 

@@ -1,30 +1,38 @@
 ---
+features:
+  bootstrap theme: https://bootswatch.com/4/materia/bootstrap.min.css
+---
 include:
   - EDO1_tree_questions.yml
   - EDO1_exception_questions.yml
   - EDO1_preliminary_questions.yml
   - EDO1_Final_Questions.yml
+  - EDO1_EmailA.yml
+  - EDO1_EmailB.yml
 ---
 mandatory: true
 code: |
   EDO1_disclaimer 
-  if EDO1_protect_trees == 'True':
-    if EDO1_district == 'False':
-      EDO1_exit_screen_2 
-  if EDO1_protect_trees == 'False':
-    EDO1_exit_screen
-  EDO1_property
+  if EDO1_district == 'False':
+    EDO1_exit_screen_2 
   if EDO1_sigreg == 'False':
+    EDO1_Part10
+  if EDO1_Part10 == 'False':
+    EDO1_significant
+  if EDO1_Part10 == 'True':
     EDO1_trunk
-    if EDO1_trunk == 'False':
-      EDO1_multiple_circumference
     if EDO1_circumference == '3+':
+      if EDO1_trunk == 'False':
+        if EDO1_multiple_circumference == 'False':
+          EDO1_exit_screen_3
       EDO1_significant
     if EDO1_circumference == '2+':
+      if EDO1_trunk == 'False':
+        if EDO1_multiple_circumference == 'False':
+          EDO1_exit_screen_3
       EDO1_regulated
     if EDO1_circumference == '<2':
-      EDO1_exit_screen_3
-  EDO1_dead_alive
+      EDO1_exit_screen_3  
   if EDO1_dead_alive == 'False':
     EDO1_exit_screen_dead
   if EDO1_interrogatory == 'False':
@@ -48,7 +56,11 @@ code: |
     if EDO1_material_risk == 'False':
       EDO1_output_B
   if EDO1_council_approval == 'True':
-    EDO1_output_A
-  EDO1_output_B  
-    
+    if EDO1_output_A == 'True':
+      EDO1_EmailA 
+    elif EDO1_output_A == 'False':
+      EDO1_exit_screen_finale
+  if EDO1_council_approval == 'False':
+    if EDO1_output_B == 'True':
+      EDO1_EmailB 
 ---

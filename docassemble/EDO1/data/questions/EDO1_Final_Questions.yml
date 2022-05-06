@@ -1,14 +1,14 @@
-
 ---
 question: What actions are currently being undertaken to the tree?
 fields: 
   - no label: EDO1_actions
     datatype: radio
     choices:
-    - Branch, limb lopping or maintenance pruning: 'True'
-    - Removal, killing or destruction 
-    - Ring barking or topping 
-    - Any other substantial damage to a regulated tree, including to the root system 
+    - The killing or destruction of a tree 
+    - The removal of a tree
+    - The severing of branches, limbs, stems or trunk of a tree: 'True'
+    - The ringbarking or topping lopping of a tree;
+    - Any other substantial damage to a tree
     - Other: 'terminate'
 under: |
   Note: explanation of maintenance pruning
@@ -44,19 +44,24 @@ buttons:
     url: https://www.edo.org.au
   - Restart: restart
 ---
-event: EDO1_output_A
+field: EDO1_output_A
 question: |
-  blah blah A
+  “it is likely that the activity needs planning approval. Go to Plan SA to check address for  information about any planning application decided or about to be decided. https://plan.sa.gov.au/development_application_registerYou can also  check the planning policies which apply to any application https://code.plan.sa.gov.au/home/what_is_the_property_address?code=apply2dev Enter property address, press continue, press more options under search for an activity, press tree damaging activity”. If any areas of this application have raised questions for you please contact the EDO (details provided)
 buttons:
-  - Exit: exit
-    url: https://www.edo.org.au
-  - Restart: restart
+  - Email copy: 'True'
+  - No Email Copy: 'False' 
 ---
 event: EDO1_output_B
 question: |
-  blah blah B
+ if there is no application listed check with your local council as the activity may be in breach of planning laws. There are penalties if planning is undertaken without approval( include detail from PDI Act and regulations). If any areas of this application have raised questions for you please contact the EDO ( details provided)
+buttons:
+  - Email Copy: 'True'
+  - No Email Copy: 'False' 
+---
+event: EDO1_exit_screen_finale
+question: "Thanks For Using Tree Ark"
 buttons:
   - Exit: exit
     url: https://www.edo.org.au
-  - Restart: restart
+  - Restart: restart 
 ---
