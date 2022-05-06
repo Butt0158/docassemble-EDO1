@@ -1,14 +1,14 @@
-
 ---
 question: What actions are currently being undertaken to the tree?
 fields: 
   - no label: EDO1_actions
     datatype: radio
     choices:
-    - Branch, limb lopping or maintenance pruning: 'True'
-    - Removal, killing or destruction 
-    - Ring barking or topping 
-    - Any other substantial damage to a regulated tree, including to the root system 
+    - The killing or destruction of a tree 
+    - The removal of a tree
+    - The severing of branches, limbs, stems or trunk of a tree: 'True'
+    - The ringbarking or topping lopping of a tree;
+    - Any other substantial damage to a tree
     - Other: 'terminate'
 under: |
   Note: explanation of maintenance pruning

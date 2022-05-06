@@ -1,16 +1,18 @@
 ---
-question: Welcome!
+mandatory: true
+question: |
+  **Welcome to Tree Ark!**
 subquestion: |
-  Welcome to (Insert Name).  (Insert description of app)
+  Tree Ark is designed to... 
+  
   ***Disclaimer:***  
   **This advice is not to be taken as genuine legal advice and is not a substitute for you seeking independent legal advice.**
 
   To continue you must accept these terms 
-field: EDO1_disclaimer
 buttons:
-  - I accept: continue
-  - I do not accept: exit
-    url: https://www.edo.org.au 
+  - I accept: continue 
+  - I do not accept: exit 
+    url: https://www.edo.org.au
 ---
 Question:
 Subquestion: | 
@@ -26,25 +28,19 @@ buttons:
 question: |
   Answer the following.
 fields:
-  - "What is your district?": EDO1_district 
+  - "What area in South Australia are you Located in?": EDO1_district 
     datatype: radio
     choices:
-      - Adelaide
-      - Greater Adelaide
-      - Mount Barker 
+      - Metropolitan
+      - Greater Metropolitan
+      - Adelaide Hills 
       - Other: 'False'
----
-Question: "What type of property is the tree located on?"  
-field: EDO1_property
-choices: 
-  - Private property: 'True'
-  - Public property: 'False'
 ---
 Question: Is the tree signficant or regulatory 
 subquestion: |
  A signficant and regualtory tree are ... 
 field: EDO1_sigreg
-buttons:
+choices:
   - Significant: 'True'
   - Regulatory: 'True'
   - Unsure: 'False' 

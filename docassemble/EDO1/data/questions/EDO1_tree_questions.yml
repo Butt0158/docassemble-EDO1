@@ -5,7 +5,7 @@ choices:
   - singular: 'True'  
   - multiple: 'False'
 ---
-Question: "What is the total circumference"
+Question: "What is the total circumference of the trunk(s) 1 meter from ground (waist height)"
 field: EDO1_circumference
 buttons: 
   - less than 2 meters: '<2'
