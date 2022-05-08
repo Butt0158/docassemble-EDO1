@@ -1,21 +1,19 @@
 objects:
   - recipient: Individual
 ---
-field: EDO1_EmailA
-question: |
-  E-mail test
+event: EDO1_EmailA
+question: "Thanks For Using Tree Ark"
 subquestion: |
-  % if intro_provided and email_sent_ok:
-  The e-mail was sent successfully.
+  % if email_sent_ok: 
+  The e-mail was sent successfully: 
   % else:
   There was a problem sending the e-mail.
   % endif
----
-question: |
-  E-mail test
-subquestion: |
-  This interview will send you an e-mail.
-field: intro_provided
+
+buttons:
+  - Exit: exit
+    url: https://www.edo.org.au
+  - Restart: restart 
 ---
 question: |
   What is your name?
@@ -43,3 +41,4 @@ content: |
    “it is likely that the activity needs planning approval. Go to Plan SA to check address for  information about any planning application decided or about to be decided. https://plan.sa.gov.au/development_application_registerYou can also  check the planning policies which apply to any application https://code.plan.sa.gov.au/home/what_is_the_property_address?code=apply2dev Enter property address, press continue, press more options under search for an activity, press tree damaging activity”. If any areas of this application have raised questions for you please contact the EDO (details provided)
    
   Thanks for using the application.
+--- 

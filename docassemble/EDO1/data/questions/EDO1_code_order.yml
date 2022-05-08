@@ -48,19 +48,34 @@ code: |
     EDO1_out_of_scope
   if EDO1_actions == 'True':
     if EDO1_30_removal == 'True':
-      EDO1_output_A
+      if EDO1_output_A == 'True':
+        EDO1_EmailA
+      elif EDO1_output_A == 'False':
+        EDO1_exit_screen_finale
     if EDO1_wood_removal == 'True':
-      EDO1_output_A
+      if EDO1_output_A == 'True':
+        EDO1_EmailA 
+      elif EDO1_output_A == 'False':
+        EDO1_exit_screen_finale
     if EDO1_material_risk == 'True':
-      EDO1_output_A
+      if EDO1_output_A == 'True':
+        EDO1_EmailA
+      elif EDO1_output_A == 'False':
+        EDO1_exit_screen_finale
     if EDO1_material_risk == 'False':
-      EDO1_output_B
+      if EDO1_output_B == 'True':
+        EDO1_EmailB 
+      elif EDO1_output_B == 'False':
+        EDO1_exit_screen_finale
   if EDO1_council_approval == 'True':
     if EDO1_output_A == 'True':
-      EDO1_EmailA 
+      if EDO1_EmailA == 'True':
+        EDO1_exit_screen_finale  
     elif EDO1_output_A == 'False':
       EDO1_exit_screen_finale
   if EDO1_council_approval == 'False':
     if EDO1_output_B == 'True':
       EDO1_EmailB 
+    elif EDO1_output_B == 'False':
+      EDO1_exit_screen_finale
 ---
