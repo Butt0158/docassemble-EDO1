@@ -4,12 +4,20 @@ features:
 ---
 include:
   - EDO1_tree_questions.yml
-  - EDO1_exception_questions.yml
+  - EDO1_exception_questions.LJC.yml
   - EDO1_preliminary_questions.yml
   - EDO1_Final_Questions.yml
   - EDO1_EmailA.yml
   - EDO1_EmailB.yml
 ---
+#Provides details for footer
+default screen parts:
+  post: |
+    <div style="display: flex; height: 170px; align-items: flex-end">
+    <div style="margin: 5px; margin-left: auto; margin-right: auto; font-size: 14px; font-family: Helvetica; color: ForestGreen">
+    <small><i>
+    Developed by Flinders University for the Environmental Defenders Office
+--- 
 mandatory: true
 code: |
   EDO1_disclaimer 
@@ -37,12 +45,16 @@ code: |
     EDO1_exit_screen_dead
   if EDO1_interrogatory == 'False':
     EDO1_trees_end
-  if EDO1_10_meters == 'True':
-    EDO1_exitscreen_4
-  if EDO1_fire_hazard == 'True':
-    EDO1_exitscreen_4
+  if EDO1_Bushfire_Hazard_area == True:
+    if EDO1_fire_hazard == True:
+      EDO1_exitscreen_4
+  if EDO1_Bushfire_Hazard_area == False:
+    if EDO1_10_meters == True:
+      if EDO1_WM_E == False:
+        EDO1_exitscreen_4
+  EDO1_department 
   if EDO1_department == 'True':
-    EDO1_exitscreen_4
+    EDO1_exitscreen_4   
   EDO1_actions
   if EDO1_actions == 'terminate':
     EDO1_out_of_scope
