@@ -1,0 +1,16 @@
+---
+include:
+  - B1_02_data_block.yml
+  - B1_03_code.yml
+---
+mandatory: True
+question:  Data table as a table
+subquestion: |
+  #### Our data was a table.  Now we make it a table again!
+  
+  ${ MJFcolumn_header }
+  ${ MJFdashes }
+  %for MJFitem in MJFtable_rows:
+  ${ MJFitem }
+  %endfor
+---
