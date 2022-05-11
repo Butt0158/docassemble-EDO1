@@ -1,7 +1,9 @@
 ---
+
 features:
   bootstrap theme: https://bootswatch.com/4/materia/bootstrap.min.css
 ---
+# The code for this application is spread across multiple files as to preventing have one very long winded messy file, as a result this sections informs the application to incorporate the listed code 
 include:
   - EDO1_tree_questions.yml
   - EDO1_exception_questions.LJC.yml
@@ -10,7 +12,7 @@ include:
   - EDO1_EmailA.yml
   - EDO1_EmailB.yml
 ---
-#Provides details for footer
+# Provides details for footer
 default screen parts:
   post: |
     <div style="display: flex; height: 170px; align-items: flex-end">
@@ -18,9 +20,9 @@ default screen parts:
     <small><i>
     Developed by Flinders University for the Environmental Defenders Office
 --- 
+# Manually dictates the order of the code and the contigency of the questions 
 mandatory: true
 code: |
-  EDO1_disclaimer 
   if EDO1_district == 'False':
     EDO1_exit_screen_2 
   if EDO1_sigreg == 'False':
@@ -79,13 +81,12 @@ code: |
         EDO1_EmailB 
       elif EDO1_output_B == 'False':
         EDO1_exit_screen_finale
-  if EDO1_council_approval == 'True':
+  if EDO1_activity_urgency == 'True':
     if EDO1_output_A == 'True':
-      if EDO1_EmailA == 'True':
-        EDO1_exit_screen_finale  
+      EDO1_EmailA
     elif EDO1_output_A == 'False':
       EDO1_exit_screen_finale
-  if EDO1_council_approval == 'False':
+  if EDO1_activity_urgency == 'False':
     if EDO1_output_B == 'True':
       EDO1_EmailB 
     elif EDO1_output_B == 'False':

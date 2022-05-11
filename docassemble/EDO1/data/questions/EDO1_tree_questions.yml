@@ -44,9 +44,11 @@ field: EDO1_significant
 button: 
 - continue: continue 'True'
 ---
+event: EDO1_exit_screen_3
 question: |
-  Tree is neither significant or regulatory
-field: EDO1_exit_screen_3
-button:
-  - bye: 
+  Tree is neither significant or regulatory ... 
+buttons:
+  - Exit: exit
+    url: https://www.edo.org.au
+  - Restart: restart
 --- 

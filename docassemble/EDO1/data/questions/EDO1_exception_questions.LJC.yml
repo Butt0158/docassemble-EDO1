@@ -107,7 +107,7 @@ fields:
     show if: EDO1_10_meters
     datatype: noyesradio
 ---
-question: "Does the Department of Transport and Infristructure plan on removing this tree?"
+question: "Does the 'Department of Transport and Infrastructure' plan on removing this tree?"
 field: EDO1_department
 choices:
   - Yes: 'True'

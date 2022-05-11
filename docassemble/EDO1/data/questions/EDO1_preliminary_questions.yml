@@ -1,4 +1,5 @@
 ---
+mandatory: true  
 Question: |
   **Welcome to Tree Ark!**
 subquestion: |
@@ -10,7 +11,7 @@ subquestion: |
   for you seeking independent legal advice.*
 
   To continue you must accept these terms 
-field: EDO1_disclaimer
+event: EDO1_disclaimer
 buttons:
   - I accept: continue
   - I do not accept: exit 
@@ -36,6 +37,7 @@ choices:
   - Significant: 'True'
   - Regulatory: 'True'
   - Unsure: 'False' 
+under: Planning, development and Infrastructuer Act 2016 (SA) s1, ss68 ...
 ---
 event: EDO1_exit_screen
 question: This application is not for you 
