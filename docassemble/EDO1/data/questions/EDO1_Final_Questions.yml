@@ -1,4 +1,7 @@
 ---
+# If user selects severing of branches, the application will ask the question about how much is being removed
+# Is user selects other, application will proceed to an exit screen as the legislation does not cover this and thus is out of scope of the application
+# If killing, removal, ringbarking, or other substantial damage, is selected, the application will ask the question about urgency of maintainence
 question: What actions are currently being undertaken to the tree?
 fields: 
   - no label: EDO1_actions
@@ -6,40 +9,45 @@ fields:
     choices:
     - The killing or destruction of a tree: 'False'
     - The removal of a tree: 'False'
-    - The severing of branches, limbs, stems or trunk of a tree: 'True'
+    - The severing of branches, limbs, stems or trunk of a tree: 'Maintainance Pruning'
     - The ringbarking or topping lopping of a tree: 'False'
     - Any other substantial damage to a tree: 'False'
-    - Other: 'terminate'
+    - Other: 'Out of Scope'
 under: |
   Note: explanation of maintenance pruning
 ---
-Question: Is the activity a matter of urgency to protect any person or building?
+# Question will only be asked if user selects killing, removal, ringbarking, or other substantial damage
+question: Is the activity a matter of urgency to protect any person or building?
 field: EDO1_activity_urgency 
 choices:
-  - Yes: 'True'
-  - No: 'False'
+  - Yes: 'Urgent'
+  - No: 'Not Urgent'
 under: |
   Planning, Development and Infrastructure Act 2016 (SA) s136(1)(a)/(b)
 ---
-Question: Is less than 30% being removed?
+# This question will only be asked if user selects severing of branches
+question: Is less than 30% being removed?
 field: EDO1_30_removal
 choices:
-  - Yes: 'True'
+  - Yes: '<30%'
   - No: 'False'
 ---
-Question: Is dead or deceased wood being removed?
+# If answer to previous question is no application will proceed to this question
+question: Is dead or deceased wood being removed?
 field: EDO1_wood_removal
 choices:
-  - Yes: 'True'
+  - Yes: 'Dead wood'
   - No: 'False'
 ---
-Question: Does the branch pose a material risk to buildings or persons?
+# If answer to previous question is no application will proceed to this question
+question: Does the branch pose a material risk to buildings or persons?
 field: EDO1_material_risk
 choices:
-  - Yes: 'True'
-  - No: 'False'
+  - Yes: 'Material Risk'
+  - No: 'Not Material Risk'
 
 ---
+# Exit screen if the user selects other
 event: EDO1_out_of_scope
 question: This is outside the scope of this application
 buttons:

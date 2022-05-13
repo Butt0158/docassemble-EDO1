@@ -1,11 +1,13 @@
 ---
-Question: "Is the tree alive or dead"
+question: "Is the tree alive or dead"
 field: EDO1_dead_alive 
 choices: 
   - alive: 'True'
-  - dead: 'False' 
+  - dead: 'Tree Dead' 
 --- 
-Question: |
+# This question displays images of tree speices, and their respective name. If the users tree of conern matches any, they will select that button. The application will then go to an exit screen as the trees are exempted.
+# If the user's tree is not the same, they will press continue, and the application will continue.
+question: |
   Is the tree of concern one of the following 22 species?
 field: EDO1_interrogatory
 buttons:
@@ -91,35 +93,50 @@ buttons:
   - Exit: exit
   - Restart: restart
 --- 
-question: "Is the tree located within 10 meters of an existing dwelling or in-ground swimming pool, except Willow Myrtle and Eculayptus" 
-field: EDO1_10_meters
-choices:
-  - Yes: 'True'
-  - No: 'False'
+# These questions will be asked on the same page using show if statements
+# This question will determine which distance question is shown
+question: Exemptions
+fields: 
+  - "Is the tree located in a medium or High Risk Bushfire Hazard area? If you are unsure please use this [link](https://sappa.plan.sa.gov.au/), search for your address, and see what bushfire overlays apply.": EDO1_Bushfire_Hazard_area
+    datatype: yesnoradio
+#This question will only show if user is not located in a medium or high bushfire hazard area
+  - "Is the tree located within twenty meters of an existing dwelling": EDO1_fire_hazard
+    datatype: yesnoradio
+    show if: EDO1_Bushfire_Hazard_area
+# Alternative to above question if user is located in a medium or high bushfire hazard area
+  - "Is the tree located within ten meters of an existing dwelling or in-ground swimming pool": EDO1_10_meters
+    show if: 
+      variable: EDO1_Bushfire_Hazard_area
+      is: False
+    datatype: yesnoradio
+# This question will only show if user is in a bushfire hazard area and the tree is within 10 meters of a dwelling or pool
+  - "Is the tree an [*Agonis flexuosa*](https://www.legislation.sa.gov.au/__legislation/lz/c/r/planning%20development%20and%20infrastructure%20(general)%20regulations%202017/current/2017.24.auth.pdf) (Willow Myrtle) or any genus of [*Eucalyptus*](https://www.legislation.sa.gov.au/__legislation/lz/c/r/planning%20development%20and%20infrastructure%20(general)%20regulations%202017/current/2017.24.auth.pdf)?": EDO1_WM_E
+    show if: EDO1_10_meters
+    datatype: noyesradio
 ---
-Question: "Is the tree located within 20 meters of a dwelling within a medium or high risk bushfire hazard area"
-field: EDO1_fire_hazard
-choices:
-  - Yes: 'True'
-  - No: 'False'
----
-Question: "Does the department of transport and infrastructure plan on removing the tree"
+# Unless the tree is exempt for any of the bushfire hazard reasons application will continue to this question, if the user answers No application will proceed to final questions
+question: "Does the 'Department of Transport and Infrastructure' plan on removing this tree?"
 field: EDO1_department
 choices:
-  - Yes: 'True'
+  - Yes: 'Plan to remove'
   - No: 'False'
 ---
+# Exit screen if the tree is dead
 event: EDO1_exit_screen_dead
-Question: No approval is required to remove tree 
-buttons:
-  - Exit: exit
-    url: https://www.edo.org.au
-  - Restart: restart
----
-event: EDO1_exitscreen_4
-Question: Tree is exempt from protections under legislation. Development approval is not required for removal 
+question: No approval is required to remove a dead tree 
 buttons:
   - Exit: exit
     url: https://www.edo.org.au
   - Restart: restart
 --- 
+# Exit screen if any exemptions other than the tree being dead apply
+event: EDO1_exitscreen_4
+question: Tree can be removed
+subquestion: |
+  This tree is exempt from protections under legislation. Development approval is not 
+  require for removal.
+buttons: 
+  - Exit: exit
+    url: https://www.edo.org.au
+  - Restart: restart
+---
