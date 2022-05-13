@@ -1,0 +1,54 @@
+---
+mandatory: true
+# Weclome and discalimer screen, describing the application and giving the user an option to exit to EDO website
+question: |
+  **Welcome to Tree Ark!**
+subquestion: |
+  This application is designed to provide you information regarding the **protection of
+  a particular tree** in urban South Australia. 
+  
+  ***Disclaimer:***  
+  *This advice is not to be taken as genuine legal advice and is not a substitute 
+  for you seeking independent legal advice.*
+
+  To continue you must accept these terms 
+event: EDO1_disclaimer
+buttons:
+  - I accept: continue
+  - I do not accept: exit 
+    url: https://www.edo.org.au
+--- 
+# If the user accepts the application terms on the welcome screen application will proceed to this question, if the tree is outside of the area in red this will lead to exit screen 2 below
+question: |
+  Is The Tree(s) Of Concern Located Within The Area Outlined Red In The Map Shown Below:
+subquestion: |
+  [FILE Map-1-Greater-Adelaide-Region-1.jpg, 115%]
+field: EDO1_district 
+choices:
+  - Yes It Is: 'True'
+  - No It Is Not: 'False'
+---
+# If the tree is located in the red area application will continue to this question which will give the user the option to save time if they already know the tree is significant or regulated
+question: |
+  Your Tree Of Concern Might Have Special Protection Under The Law.
+subquestion: |
+  Depending upon the tree's size and species, it may be legally considered
+  *significant* or *regulated*. These terms have **distinct legal meaning**, if 
+  you are unfamiliar with these legal terms please select 'unsure'.  
+  
+  Is your tree significant or regulated?
+field: EDO1_sigreg
+choices:
+  - It Is Significant: 'True'
+  - It Is Regulated: 'True'
+  - Unsure: 'False' 
+under: Planning, development and Infrastructuer Act 2016 (SA) s1, ss68 ...
+--- 
+# Exit Screen if the user does not select the tree is within the area outlined in Red
+event: EDO1_exit_screen_2 
+question: "We're Sorry, This Application Only Applies To Trees Located In Urban Areas Of South Australia"
+buttons:
+  - Exit: exit
+    url: https://www.edo.org.au
+  - Restart: restart
+--- 

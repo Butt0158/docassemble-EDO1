@@ -1,0 +1,140 @@
+---
+question: "Is the tree alive or dead"
+field: EDO1_dead_alive 
+choices: 
+  - alive: 'True'
+  - dead: 'False' 
+--- 
+question: |
+  Is the tree of concern one of the following 22 species?
+field: EDO1_interrogatory
+buttons:
+  - Box Elder: 'False'
+    image: Box Elder 
+  - Silver Maple: 'False' 
+    image: Silver Maple 
+  - Tree of Heaven: 'False' 
+    image: Tree of Heaven 
+  - Evergreen Alder: 'False'
+    image: Evergreen Alder 
+  - European Nettle Tree: 'False' 
+    image: European Nettle Tree 
+  - Chinese Nettle Tree: 'False'
+    image: Chinese Nettle Tree 
+  - Camphor Laurel: 'False'
+    image: Camphor Laurel 
+  - Monterey Cypress: 'False'
+    image: Monterey Cypress
+  - Moreton Bay Fig: 'False' 
+    image: Moreton Bay Fig 
+  - Desert Ash: 'False'
+    image: Desert Ash
+  - Norfolk Island Hibiscus: 'False'
+    image: Norfolk Island Hibiscus
+  - Prickly-leaved Paperback: 'False'
+    image: Prickly-leaved Paperback
+  - Monterey Pine: 'False'
+    image: Monterey Pine
+  - London Plane: 'False'
+    image: London Plane
+  - White popular: 'False'
+    image: White popular
+  - Lombardy Poplar: 'False'
+    image: Lombardy Poplar
+  - Black Locust: 'False'
+    image: Black Locust
+  - Weeping Willow: 'False'
+    image: Weeping Willow
+  - Pencil Willow: 'False'
+    image: Pencil Willow
+  - Crack Willow: 'False'
+    image: Crack Willow
+  - Basket Willow: 'False'
+    image: Basket Willow
+  - Golden Willow: 'False'
+    image: Golden Willow
+  - Peppercorn Tree: 'False'
+    image: Peppercorn Tree
+  - None of these: 'True'
+    image: none of these 
+---
+image sets:
+  freepik:
+    images:
+      Box Elder: Acer_negundo_Box_Elder.jpeg 
+      Silver Maple: Acer_saccharinum_Silver_Maple.jpeg
+      Tree of Heaven: Ailanthus_altissima_Tree_of_heaven.jpeg
+      Evergreen Alder: Alnus_acuminate_subsp._Glabrata_Evergreen_Alder.jpeg 
+      European Nettle Tree: Celtis_australis_European_Nettle_Tree.jpeg
+      Chinese Nettle Tree: Celtis_sinensis_Chinese_Nettle_Tree.jpeg
+      Camphor Laurel: Cinnamomum_camphora_Camphor_Laurel.jpeg
+      Monterey Cypress: Cupressus_macrocarpa_Monterey_Cypress.jpeg
+      Moreton Bay Fig: Ficus_macrophylla_Moreton_bay_fig.jpeg
+      Desert Ash: Fraxinus_angustifolia_ssp._Oxycarpa_desert_ash.jpeg
+      Norfolk Island Hibiscus: Lagunaria_patersonia_Norfolk_Island_Hibiscus.jpg
+      Prickly-leaved Paperback: Melaleuca_styphelioides_Prickly-leaved_Paperback.jpg 
+      Monterey Pine: Pinus_Radiata_Radiata_Pine_Monterey_Pine.jpg
+      London Plane: Platanus_x_acerifolia_London_Plane.jpg
+      White popular: Populus_alba_White_poplar.jpg
+      Lombardy Poplar: Populus_nigra_var._italica_Lombardy_Poplar.jpg
+      Black Locust: Robinia_pseudoacacia_Black_Locust.jpg
+      Weeping Willow: Salix_babylonica_Weeping_Willow.jpg
+      Pencil Willow: Pencil_Willow.jpg
+      Crack Willow: Salix_fragilis_Crack_Willow.jpg
+      Basket Willow: Salix_X_rubens_White_Crack_Willow_Basket_Willow.jpg
+      Golden Willow: Golden_Weeping_Willow.jpg
+      Peppercorn Tree: Schinus_Areira_Peppercorn_Tree.jpg    
+---
+event: EDO1_trees_end
+question: Your tree is exempt under legislation. Thanks for using our application!
+buttons: 
+  - Exit: exit
+  - Restart: restart
+--- 
+# These questions will be asked on the same page using show if statements
+# This question will determine which distance question is shown
+question: Exemptions
+fields: 
+  - "Is the tree located in a medium or High Risk Bushfire Hazard area? If you are unsure please use this [link](https://sappa.plan.sa.gov.au/), search for your address, and see what bushfire overlays apply.": EDO1_Bushfire_Hazard_area
+    datatype: yesnoradio
+#This question will only show if user is not located in a medium or high bushfire hazard area
+  - "Is the tree located within twenty meters of an existing dwelling": EDO1_fire_hazard
+    datatype: yesnoradio
+    show if: EDO1_Bushfire_Hazard_area
+# Alternative to above question if user is located in a medium or high bushfire hazard area
+  - "Is the tree located within ten meters of an existing dwelling or in-ground swimming pool": EDO1_10_meters
+    show if: 
+      variable: EDO1_Bushfire_Hazard_area
+      is: False
+    datatype: yesnoradio
+# This question will only show if user is in a bushfire hazard area and the tree is within 10 meters of a dwelling or pool
+  - "Is the tree an [*Agonis flexuosa*](https://www.legislation.sa.gov.au/__legislation/lz/c/r/planning%20development%20and%20infrastructure%20(general)%20regulations%202017/current/2017.24.auth.pdf) (Willow Myrtle) or any genus of [*Eucalyptus*](https://www.legislation.sa.gov.au/__legislation/lz/c/r/planning%20development%20and%20infrastructure%20(general)%20regulations%202017/current/2017.24.auth.pdf)?": EDO1_WM_E
+    show if: EDO1_10_meters
+    datatype: noyesradio
+---
+# Unless the tree is exempt for any of the bushfire hazard reasons application will continue to this question, if the user answers No application will proceed to final questions
+question: "Does the 'Department of Transport and Infrastructure' plan on removing this tree?"
+field: EDO1_department
+choices:
+  - Yes: 'True'
+  - No: 'False'
+---
+# Exit screen if the tree is dead
+event: EDO1_exit_screen_dead
+question: No approval is required to remove a dead tree 
+buttons:
+  - Exit: exit
+    url: https://www.edo.org.au
+  - Restart: restart
+--- 
+# Exit screen if any exemptions other than the tree being dead apply
+event: EDO1_exitscreen_4
+question: Tree can be removed
+subquestion: |
+  This tree is exempt from protections under legislation. Development approval is not 
+  require for removal.
+buttons: 
+  - Exit: exit
+    url: https://www.edo.org.au
+  - Restart: restart
+---

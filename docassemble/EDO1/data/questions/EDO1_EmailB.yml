@@ -1,0 +1,55 @@
+objects:
+  - recipient: Individual
+---
+event: EDO1_EmailB
+question: "Thanks For Using Tree Ark"
+subquestion: |
+  % if email_sent_ok: 
+  The e-mail was sent successfully: 
+  % else:
+  There was a problem sending the e-mail.
+  % endif
+
+buttons:
+  - Exit: exit
+    url: https://www.edo.org.au
+  - Restart: restart 
+---
+question: |
+  What is your name? B
+fields:
+  - First Name: recipient.name.first
+  - Last Name: recipient.name.last
+---
+question: |
+  What is your e-mail address? B
+fields:
+  - E-mail: recipient.email
+    datatype: email
+---
+code: |
+  email_sent_ok = send_email(to=recipient, template=notification)
+---
+template: notification
+subject: |
+  Output From Tree Ark
+content: |
+  Hello, ${ recipient }!
+  
+  Here is a copy of the output provided within the application. 
+ 
+  It is likely that the activity needs planning approval. Go to [PlanSA](https://plan.sa.gov.au/) to check address for information about any planning application decided or about to be decided. You can also check the planning policies which apply to any application found [here](https://plan.sa.gov.au/resources/planning/state_planning_policies).  
+
+
+  Please follow the steps below: 
+
+  1. Click on "Public Development Application Register"
+  2. Enter property address or suburb 
+  3. Press “continue”
+  4. Press “more options” under search for an activity
+  5. Press “tree damaging activity”
+
+  If there is no application listed, this activity may be a breach of planning laws. There are penalties if planning affecting trees is undertaken without approval. These penalties are found under section 215 of the Planning, Development, and Infrastructure Act 2016 and can incur a maximum penalty of $120,000. If any areas of this application have raised questions for you, please contact the [Environmental Defenders Office](https://www.edo.org.au/).
+   
+  Thanks for using Tree Ark.
+---

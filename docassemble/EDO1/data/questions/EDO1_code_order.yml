@@ -1,0 +1,117 @@
+---
+metadata:
+  title: |
+    Tree Ark
+  decription: |
+    Application designed to assit users seeking informating on tree protectin in urban South Australia
+  Authors:
+    - name: Jordan Buttery
+    - organisation: Flinders University
+    - name: Lachlan Cromb
+    - organisation: Flinders University
+    - name: Adarsh Jacob
+    - organisation: Flinders University
+    - name: Robert Cousins
+    - organisation: Flinders University
+    - name: Zac Caldicott-Millard 
+    - organisation: Flinders University
+  revision_date: 2022-05-13
+---
+features:
+  bootstrap theme: https://bootswatch.com/4/materia/bootstrap.min.css
+---
+# The code for this application is spread across multiple files as to preventing have one very long winded messy file, as a result this sections informs the application to incorporate the listed code 
+include:
+  - EDO1_tree_questions.yml
+  - EDO1_exception_questions.yml
+  - EDO1_preliminary_questions.yml
+  - EDO1_Final_Questions.yml
+  - Attachment_A.yml
+  - Attachment_B.yml
+---
+# Provides details for footer
+default screen parts:
+  post: |
+    <div style="display: flex; height: 170px; align-items: flex-end">
+    <div style="margin: 5px; margin-left: auto; margin-right: auto; font-size: 14px; font-family: Helvetica; color: ForestGreen">
+    <small><i>
+    Developed by Flinders University for the Environmental Defenders Office
+--- 
+# Manually dictates the order of the code and the contigency of the questions 
+mandatory: true
+code: |
+  if EDO1_district == 'Not Urban':
+    EDO1_exit_screen_1 
+  if EDO1_sigreg == 'Unsure':
+    EDO1_Part10
+  if EDO1_Part10 == 'Tree listed':
+    EDO1_significant
+  if EDO1_Part10 == 'Tree not listed':
+    EDO1_trunk
+    if EDO1_circumference == '3+':
+      if EDO1_trunk == 'Multiple':
+        if EDO1_multiple_circumference == 'Less than 625mm':
+          EDO1_exit_screen_3
+      EDO1_significant
+    if EDO1_circumference == '2+':
+      if EDO1_trunk == 'Multiple':
+        if EDO1_multiple_circumference == 'Less than 625mm':
+          EDO1_exit_screen_3
+      EDO1_regulated
+    if EDO1_circumference == '<2':
+      EDO1_exit_screen_3  
+  if EDO1_dead_alive == 'Tree Dead':
+    EDO1_exit_screen_dead
+  if EDO1_interrogatory == 'False':
+    EDO1_trees_end
+  if EDO1_Bushfire_Hazard_area == True:
+    if EDO1_fire_hazard == True:
+      EDO1_exitscreen_4
+  if EDO1_Bushfire_Hazard_area == False:
+    if EDO1_10_meters == True:
+      if EDO1_WM_E == False:
+        EDO1_exitscreen_4
+  EDO1_department 
+  if EDO1_department == 'Plan to remove':
+    EDO1_exitscreen_4   
+  EDO1_actions
+  if EDO1_actions == 'Out of Scope':
+    EDO1_out_of_scope
+  if EDO1_actions == 'Maintainance Pruning':
+    if EDO1_30_removal == '<30%':
+      if EDO1_output_A == 'CopyA':
+        Attachment_A
+        EDO1_exit_screen_finale
+      elif EDO1_output_A == 'No CopyA':
+        EDO1_exit_screen_finale
+    if EDO1_wood_removal == 'Dead wood':
+      if EDO1_output_A == 'CopyA':
+        Attachment_A
+        EDO1_exit_screen_finale
+      elif EDO1_output_A == 'No CopyA':
+        EDO1_exit_screen_finale
+    if EDO1_material_risk == 'Material Risk':
+      if EDO1_output_A == 'CopyA':
+        Attachment_A
+        EDO1_exit_screen_finale
+      elif EDO1_output_A == 'No CopyA':
+        EDO1_exit_screen_finale
+    if EDO1_material_risk == 'Not Material Risk':
+      if EDO1_output_B == 'CopyB':
+        Attachment_B
+        EDO1_exit_screen_finale
+      elif EDO1_output_B == 'No CopyB':
+        EDO1_exit_screen_finale
+  if EDO1_activity_urgency == 'Urgent':
+    if EDO1_output_A == 'CopyA':
+      Attachment_A
+      EDO1_exit_screen_finale
+    elif EDO1_output_A == 'No CopyA':
+      EDO1_exit_screen_finale
+  if EDO1_activity_urgency == 'Not Urgent':
+    if EDO1_output_B == 'CopyB':
+      Attachment_B
+      EDO1_exit_screen_finale
+    elif EDO1_output_B == 'No CopyB':
+      EDO1_exit_screen_finale
+---

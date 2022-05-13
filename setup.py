@@ -44,10 +44,10 @@ def find_package_data(where='.', package='', exclude=standard_exclude, exclude_d
 
 setup(name='docassemble.EDO1',
       version='0.0.1',
-      description=('A docassemble extension.'),
-      long_description='# docassemble.EDO1\r\n\r\nA docassemble extension.\r\n\r\n## Author\r\n\r\nJordan Buttery, butt0158@flinders.edu.au\r\n\r\n',
+      description=('Environmental Defenders Office Application'),
+      long_description="# docassemble.EDO1\r\nEnvironmental Defenders Office application titled 'Tree Ark'\r\n## Authors\r\nJordan Buttery, butt0158@flinders.edu.au\r\nLachlan Cromb, crom0038@flinders.edu.au\r\nAdarsh Jacob, jaco0194@flinders.edu.au\r\nRobert Cousins, cous0060@flinders.edu.au\r\nZachary Caldicott-Millard, cald0093@flinders.edu.au",
       long_description_content_type='text/markdown',
-      author='Jordan Buttery',
+      author='Law in a Digital Age EDO1',
       author_email='butt0158@flinders.edu.au',
       license='The MIT License (MIT)',
       url='https://docassemble.org',

@@ -1,0 +1,91 @@
+---
+# If user selects severing of branches, the application will ask the question about how much is being removed
+# Is user selects other, application will proceed to an exit screen as the legislation does not cover this and thus is out of scope of the application
+# If killing, removal, ringbarking, or other substantial damage, is selected, the application will ask the question about urgency of maintainence
+question: What actions are currently being undertaken to the tree?
+fields: 
+  - no label: EDO1_actions
+    datatype: radio
+    choices:
+    - The killing or destruction of a tree: 'False'
+    - The removal of a tree: 'False'
+    - The severing of branches, limbs, stems or trunk of a tree: 'True'
+    - The ringbarking or topping lopping of a tree: 'False'
+    - Any other substantial damage to a tree: 'False'
+    - Other: 'terminate'
+under: |
+  Note: explanation of maintenance pruning
+---
+# Question will only be asked if user selects killing, removal, ringbarking, or other substantial damage
+question: Is the activity a matter of urgency to protect any person or building?
+field: EDO1_activity_urgency 
+choices:
+  - Yes: 'True'
+  - No: 'False'
+under: |
+  Planning, Development and Infrastructure Act 2016 (SA) s136(1)(a)/(b)
+---
+# This question will only be asked if user selects severing of branches
+question: Is less than 30% being removed?
+field: EDO1_30_removal
+choices:
+  - Yes: 'True'
+  - No: 'False'
+---
+# If answer to previous question is no application will proceed to this question
+question: Is dead or deceased wood being removed?
+field: EDO1_wood_removal
+choices:
+  - Yes: 'True'
+  - No: 'False'
+---
+# If answer to previous question is no application will proceed to this question
+question: Does the branch pose a material risk to buildings or persons?
+field: EDO1_material_risk
+choices:
+  - Yes: 'True'
+  - No: 'False'
+
+---
+# Exit screen if the user selects other
+event: EDO1_out_of_scope
+question: This is outside the scope of this application
+buttons:
+  - Exit: exit
+    url: https://www.edo.org.au
+  - Restart: restart
+---
+
+field: EDO1_output_A
+question: |
+  There is no need for council approval. This means that the activity being undertaken to the tree is permitted. You may wish to reach out to your local council if you want more information. If any areas of this application have raised questions for you, please contact the [Environmental Defenders Office](https://www.edo.org.au/).
+buttons:
+  - Email copy: 'True'
+  - No Email Copy: 'False' 
+---
+field: EDO1_output_B
+question: |
+  It is likely that the activity needs planning approval. Go to [PlanSA](https://plan.sa.gov.au/) to check address for information about any planning application decided or about to be decided. You can also check the planning policies which apply to any application found [here](https://plan.sa.gov.au/resources/planning/state_planning_policies).  
+
+
+  Please follow the steps below: 
+
+  1. Click on "Public Development Application Register"
+  2. Enter property address or suburb 
+  3. Press “continue”
+  4. Press “more options” under search for an activity
+  5. Press “tree damaging activity”
+
+  If there is no application listed, this activity may be a breach of planning laws. There are penalties if planning affecting trees is undertaken without approval. These penalties are found under section 215 of the Planning, Development, and Infrastructure Act 2016 and can incur a maximum penalty of $120,000. If any areas of this application have raised questions for you, please contact the [Environmental Defenders Office](https://www.edo.org.au/).
+ 
+buttons:
+  - Email Copy: 'True'
+  - No Email Copy: 'False' 
+---
+event: EDO1_exit_screen_finale
+question: "Thanks For Using Tree Ark"
+buttons:
+  - Exit: exit
+    url: https://www.edo.org.au
+  - Restart: restart 
+---
