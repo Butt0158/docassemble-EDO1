@@ -1,5 +1,22 @@
 ---
-
+metadata:
+  title: |
+    Tree Ark
+  decription: |
+    Application designed to assit users seeking informating on tree protectin in urban South Australia
+  Authors:
+    - name: Jordan Buttery
+    - organisation: Flinders University
+    - name: Lachlan Cromb
+    - organisation: Flinders University
+    - name: Adarsh Jacob
+    - organisation: Flinders University
+    - name: Robert Cousins
+    - organisation: Flinders University
+    - name: Zac Caldicott-Millard 
+    - organisation: Flinders University
+  revision_date: 2022-05-13
+---
 features:
   bootstrap theme: https://bootswatch.com/4/materia/bootstrap.min.css
 ---
@@ -9,8 +26,8 @@ include:
   - EDO1_exception_questions.yml
   - EDO1_preliminary_questions.yml
   - EDO1_Final_Questions.yml
-  - EDO1_EmailA.yml
-  - EDO1_EmailB.yml
+  - Attachment_A.yml
+  - Attachment_B.yml
 ---
 # Provides details for footer
 default screen parts:
@@ -62,33 +79,39 @@ code: |
     EDO1_out_of_scope
   if EDO1_actions == 'Maintainance Pruning':
     if EDO1_30_removal == '<30%':
-      if EDO1_output_A == 'True':
-        EDO1_EmailA
-      elif EDO1_output_A == 'False':
+      if EDO1_output_A == 'CopyA':
+        Attachment_A
+        EDO1_exit_screen_finale
+      elif EDO1_output_A == 'No CopyA':
         EDO1_exit_screen_finale
     if EDO1_wood_removal == 'Dead wood':
-      if EDO1_output_A == 'True':
-        EDO1_EmailA 
-      elif EDO1_output_A == 'False':
+      if EDO1_output_A == 'CopyA':
+        Attachment_A
+        EDO1_exit_screen_finale
+      elif EDO1_output_A == 'No CopyA':
         EDO1_exit_screen_finale
     if EDO1_material_risk == 'Material Risk':
-      if EDO1_output_A == 'True':
-        EDO1_EmailA
-      elif EDO1_output_A == 'False':
+      if EDO1_output_A == 'CopyA':
+        Attachment_A
+        EDO1_exit_screen_finale
+      elif EDO1_output_A == 'No CopyA':
         EDO1_exit_screen_finale
     if EDO1_material_risk == 'Not Material Risk':
-      if EDO1_output_B == 'True':
-        EDO1_EmailB 
-      elif EDO1_output_B == 'False':
+      if EDO1_output_B == 'CopyB':
+        Attachment_B
+        EDO1_exit_screen_finale
+      elif EDO1_output_B == 'No CopyB':
         EDO1_exit_screen_finale
   if EDO1_activity_urgency == 'Urgent':
-    if EDO1_output_A == 'True':
-      EDO1_EmailA
-    elif EDO1_output_A == 'False':
+    if EDO1_output_A == 'CopyA':
+      Attachment_A
+      EDO1_exit_screen_finale
+    elif EDO1_output_A == 'No CopyA':
       EDO1_exit_screen_finale
   if EDO1_activity_urgency == 'Not Urgent':
-    if EDO1_output_B == 'True':
-      EDO1_EmailB 
-    elif EDO1_output_B == 'False':
+    if EDO1_output_B == 'CopyB':
+      Attachment_B
+      EDO1_exit_screen_finale
+    elif EDO1_output_B == 'No CopyB':
       EDO1_exit_screen_finale
 ---

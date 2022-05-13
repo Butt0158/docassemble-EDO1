@@ -60,8 +60,8 @@ field: EDO1_output_A
 question: |
   There is no need for council approval. This means that the activity being undertaken to the tree is permitted. You may wish to reach out to your local council if you want more information. If any areas of this application have raised questions for you, please contact the [Environmental Defenders Office](https://www.edo.org.au/).
 buttons:
-  - Email copy: 'True'
-  - No Email Copy: 'False' 
+  - I Want a Copy: 'CopyA'
+  - No Copy: 'No CopyA' 
 ---
 field: EDO1_output_B
 question: |
@@ -79,8 +79,8 @@ question: |
   If there is no application listed, this activity may be a breach of planning laws. There are penalties if planning affecting trees is undertaken without approval. These penalties are found under section 215 of the Planning, Development, and Infrastructure Act 2016 and can incur a maximum penalty of $120,000. If any areas of this application have raised questions for you, please contact the [Environmental Defenders Office](https://www.edo.org.au/).
  
 buttons:
-  - Email Copy: 'True'
-  - No Email Copy: 'False' 
+  - I Want a Copy: 'CopyB'
+  - No Copy: 'No CopyB' 
 ---
 event: EDO1_exit_screen_finale
 question: "Thanks For Using Tree Ark"

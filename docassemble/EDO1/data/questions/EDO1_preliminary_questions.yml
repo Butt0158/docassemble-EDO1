@@ -25,8 +25,8 @@ subquestion: |
   [FILE Map-1-Greater-Adelaide-Region-1.jpg, 115%]
 field: EDO1_district 
 choices:
-  - Yes I am: 'True'
-  - No I am not: 'Not Urban'
+  - Yes It Is: 'True'
+  - No It Is Not: 'Not Urban'
 ---
 # If the tree is located in the red area application will continue to this question which will give the user the option to save time if they already know the tree is significant or regulated.
 Question: |
@@ -39,8 +39,8 @@ subquestion: |
   Is your tree significant or regulated?
 field: EDO1_sigreg
 choices:
-  - Significant: 'True'
-  - Regulatory: 'True'
+  - It Is Significant: 'True'
+  - It Is Regulated: 'True'
   - Unsure: 'Unsure' 
 under: Planning, development and Infrastructuer Act 2016 (SA) s1, ss68 ...
 ---
