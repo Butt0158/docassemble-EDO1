@@ -15,6 +15,7 @@ field: EDO1_trunk
 choices: 
   - singular: 'True'  
   - multiple: 'Multiple'
+under: PDI (General) Regulations 2017 (SA) ss [3F(1)-(2)](http://classic.austlii.edu.au/au/legis/sa/consol_reg/pdair2017579/s3f.html)
 ---
 # No matter the answer to the previous question, the application will ask this question to determien if the tree is considered significant or regulated
 question: "What Is The Total Circumference Of The Trunk(s) Measured At A Point 1 Meter Above Natural Ground Level?"
@@ -24,8 +25,7 @@ choices:
   - 2 meters or more: '2+'
   - 3 meters or more: '3+'
   
-under: |
-  *Please view section 3F(1) found  [here](https://www.legislation.sa.gov.au/__legislation/lz/c/r/planning%20development%20and%20infrastructure%20(general)%20regulations%202017/current/2017.24.auth.pdf) for more information* 
+under: PDI (General) Regulations 2017 (SA) s [3F(1)](http://classic.austlii.edu.au/au/legis/sa/consol_reg/pdair2017579/s3f.html) 
 --- 
 # This question will only ask if the user selected multiple trunks and the average circumference is 2 or 3 meters
 question: |
@@ -35,6 +35,7 @@ datatype: radio
 choices: 
 - Yes: 'True'
 - No: 'Less than 625mm'
+under: PDI (General) Regulations 2017 (SA) ss [3F(1)-(2)](http://classic.austlii.edu.au/au/legis/sa/consol_reg/pdair2017579/s3f.html)
 ---
 # This will continue to the exemption questions, as it is possible that exemptions to being regulated still apply
 question: |
