@@ -1,12 +1,6 @@
----
-Question: "Is the tree alive or dead"
-field: EDO1_dead_alive 
-choices: 
-  - alive: 'True'
-  - dead: 'False' 
 --- 
 Question: |
-  Is the tree of concern one of the following 22 species?
+   Confirm if your tree is one of the following 23 species? Or select **'none of these'**
 field: EDO1_interrogatory
 buttons:
   - Box Elder: 'False'
@@ -55,8 +49,9 @@ buttons:
     image: Golden Willow
   - Peppercorn Tree: 'False'
     image: Peppercorn Tree
-  - None of these: 'True'
-    image: none of these 
+  - none of these: 'True'
+    image: none of these
+mandatory: true 
 ---
 image sets:
   freepik:
@@ -77,7 +72,7 @@ image sets:
       London Plane: Platanus_x_acerifolia_London_Plane.jpg
       White popular: Populus_alba_White_poplar.jpg
       Lombardy Poplar: Populus_nigra_var._italica_Lombardy_Poplar.jpg
-      Black Locust: Robinia_pseudoacacia_Black_Locust.jpg
+      Black Locust: Black_Locust.jpeg
       Weeping Willow: Salix_babylonica_Weeping_Willow.jpg
       Pencil Willow: Pencil_Willow.jpg
       Crack Willow: Salix_fragilis_Crack_Willow.jpg
@@ -85,13 +80,16 @@ image sets:
       Golden Willow: Golden_Weeping_Willow.jpg
       Peppercorn Tree: Schinus_Areira_Peppercorn_Tree.jpg    
 ---
-event: EDO1_trees_end
-question: Your tree is exempt under legislation. Thanks for using our application!
-buttons: 
+question: |
+    Your tree is exempt under legislation and therefore cannot be removed, if you have further questions please contact the [Environmental Defenders Office](https://www.edo.org.au)
+subquestion: |  
+buttons:
   - Exit: exit
+    url: https://www.edo.org.au
   - Restart: restart
 --- 
-question: Exemptions
+question: |
+  Exemptions
 fields: 
   - "Is the tree located in a medium or High Risk Bushfire Hazard area?": EDO1_Bushfire_Hazard_area
     datatype: yesnoradio
@@ -106,6 +104,10 @@ fields:
   - "Is the tree a Willow Myrtle or Eucalyptus?": EDO1_WM_E
     show if: EDO1_10_meters
     datatype: noyesradio
+    
+subquestion: | 
+   EDO1_interrogatory: "${ True }"
+mandatory: true 
 ---
 question: "Does the 'Department of Transport and Infrastructure' plan on removing this tree?"
 field: EDO1_department
