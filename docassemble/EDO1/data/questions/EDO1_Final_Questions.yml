@@ -13,8 +13,7 @@ fields:
     - The ringbarking or topping lopping of a tree: 'False'
     - Any other substantial damage to a tree: 'False'
     - Other: 'Out of Scope'
-under: |
-  Note: explanation of maintenance pruning
+under: Planning, Development and Infrastructure Act 2016 (SA) s 3
 ---
 # Question will only be asked if user selects killing, removal, ringbarking, or other substantial damage
 question: Is the activity a matter of urgency to protect any person or building?
@@ -22,8 +21,7 @@ field: EDO1_activity_urgency
 choices:
   - Yes: 'Urgent'
   - No: 'Not Urgent'
-under: |
-  Planning, Development and Infrastructure Act 2016 (SA) s136(1)(a)/(b)
+under: Planning, Development and Infrastructure Act 2016 (SA) ss 136(1)(a)-(b)
 ---
 # This question will only be asked if user selects severing of branches
 question: Is less than 30% being removed?
@@ -31,6 +29,7 @@ field: EDO1_30_removal
 choices:
   - Yes: '<30%'
   - No: 'False'
+under: Planning, Development and Infrastructure (General) Regulations 2017 (SA) s 3F(6)(a)
 ---
 # If answer to previous question is no application will proceed to this question
 question: Is dead or deceased wood being removed?
@@ -38,6 +37,7 @@ field: EDO1_wood_removal
 choices:
   - Yes: 'Dead wood'
   - No: 'False'
+under: Planning, Development and Infrastructure (General) Regulations 2017 (SA) s 3F(6)(b)(i)
 ---
 # If answer to previous question is no application will proceed to this question
 question: Does the branch pose a material risk to buildings or persons?
@@ -45,7 +45,7 @@ field: EDO1_material_risk
 choices:
   - Yes: 'Material Risk'
   - No: 'Not Material Risk'
-
+under: Planning, Development and Infrastructure (General) Regulations 2017 (SA) ss 3F(6)(b)(ii)-(iii)
 ---
 # Exit screen if the user selects other
 event: EDO1_out_of_scope
@@ -62,25 +62,23 @@ question: |
 buttons:
   - I Want a Copy: 'CopyA'
   - No Copy: 'No CopyA' 
+under: Planning, Development and Infrastructure Act 2016 (SA) s 136
 ---
 field: EDO1_output_B
 question: |
   It is likely that the activity needs planning approval. Go to [PlanSA](https://plan.sa.gov.au/) to check address for information about any planning application decided or about to be decided. You can also check the planning policies which apply to any application found [here](https://plan.sa.gov.au/resources/planning/state_planning_policies).  
-
-
   Please follow the steps below: 
-
   1. Click on "Public Development Application Register"
   2. Enter property address or suburb 
   3. Press “continue”
   4. Press “more options” under search for an activity
   5. Press “tree damaging activity”
-
   If there is no application listed, this activity may be a breach of planning laws. There are penalties if planning affecting trees is undertaken without approval. These penalties are found under section 215 of the Planning, Development, and Infrastructure Act 2016 and can incur a maximum penalty of $120,000. If any areas of this application have raised questions for you, please contact the [Environmental Defenders Office](https://www.edo.org.au/).
  
 buttons:
   - I Want a Copy: 'CopyB'
   - No Copy: 'No CopyB' 
+under: Planning, Development and Infrastructure Act 2016 (SA) s 215
 ---
 event: EDO1_exit_screen_finale
 question: "Thanks For Using Tree Ark"

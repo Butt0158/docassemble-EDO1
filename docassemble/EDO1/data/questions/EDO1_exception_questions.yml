@@ -58,7 +58,8 @@ buttons:
   - Peppercorn Tree: 'False'
     image: Peppercorn Tree
   - None of these: 'True'
-    image: none of these 
+    image: none of these
+under: Planning, Development and Infrastructure (General) Regulations 2017 (SA) s 3F(4)(b)
 ---
 image sets:
   freepik:
@@ -92,6 +93,7 @@ question: Your tree is exempt under legislation. Thanks for using our applicatio
 buttons: 
   - Exit: exit
   - Restart: restart
+under: Planning, Development and Infrastructure (General) Regulations s 3F(4)(b)
 --- 
 # These questions will be asked on the same page using show if statements
 # This question will determine which distance question is shown
@@ -113,6 +115,7 @@ fields:
   - "Is the tree an [*Agonis flexuosa*](https://www.legislation.sa.gov.au/__legislation/lz/c/r/planning%20development%20and%20infrastructure%20(general)%20regulations%202017/current/2017.24.auth.pdf) (Willow Myrtle) or any genus of [*Eucalyptus*](https://www.legislation.sa.gov.au/__legislation/lz/c/r/planning%20development%20and%20infrastructure%20(general)%20regulations%202017/current/2017.24.auth.pdf)?": EDO1_WM_E
     show if: EDO1_10_meters
     datatype: noyesradio
+under: Planning, Development and Infrastructure (General) Regulations 2017 (SA) ss 3F(4)(a), sch 4 item 18(1)(b)
 ---
 # Unless the tree is exempt for any of the bushfire hazard reasons application will continue to this question, if the user answers No application will proceed to final questions
 question: "Does the 'Department of Transport and Infrastructure' plan on removing this tree?"
@@ -120,6 +123,7 @@ field: EDO1_department
 choices:
   - Yes: 'Plan to remove'
   - No: 'False'
+under: Highways Act 1926 (SA) s 26A
 ---
 # Exit screen if the tree is dead
 event: EDO1_exit_screen_dead
@@ -134,9 +138,10 @@ event: EDO1_exitscreen_4
 question: Tree can be removed
 subquestion: |
   This tree is exempt from protections under legislation. Development approval is not 
-  require for removal.
+  required for removal.
 buttons: 
   - Exit: exit
     url: https://www.edo.org.au
   - Restart: restart
+under: Planning, Development and Infrastructure (General) Regulations 2017 (SA) ss 3F(4)(a), sch 4 item 18(1)(b) and Highways Act 1926 (SA) s 26A
 ---

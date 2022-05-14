@@ -10,7 +10,6 @@ subquestion: |
   ***Disclaimer:***  
   *This advice is not to be taken as genuine legal advice and is not a substitute 
   for you seeking independent legal advice.*
-
   To continue you must accept these terms 
 event: EDO1_disclaimer
 buttons:
@@ -42,7 +41,7 @@ choices:
   - It Is Significant: 'True'
   - It Is Regulated: 'True'
   - Unsure: 'Unsure' 
-under: Planning, development and Infrastructuer Act 2016 (SA) s1, ss68 ...
+under: PDI 2016 (SA) ss [3](http://www8.austlii.edu.au/cgi-bin/viewdoc/au/legis/sa/consol_act/pdaia2016415/s3.html) & [68](http://www8.austlii.edu.au/cgi-bin/viewdoc/au/legis/sa/consol_act/pdaia2016415/s68.html) / PDI (General) Regulations 2017 (SA) ss [3F(1)-(2)](http://classic.austlii.edu.au/au/legis/sa/consol_reg/pdair2017579/s3f.html)
 ---
 # Exit Screen if the user does not select the tree is within the area outlined in Red
 event: EDO1_exit_screen_1 
