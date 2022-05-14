@@ -25,8 +25,8 @@ subquestion: |
   [FILE Map-1-Greater-Adelaide-Region-1.jpg, 115%]
 field: EDO1_district 
 choices:
-  - Yes I am: 'True'
-  - No I am not: 'Not Urban'
+  - Yes It Is: 'True'
+  - No It Is Not: 'Not Urban'
 ---
 # If the tree is located in the red area application will continue to this question which will give the user the option to save time if they already know the tree is significant or regulated.
 Question: |
@@ -39,10 +39,10 @@ subquestion: |
   Is your tree significant or regulated?
 field: EDO1_sigreg
 choices:
-  - Significant: 'True'
-  - Regulatory: 'True'
+  - It Is Significant: 'Significant'
+  - It Is Regulated: 'Regulated'
   - Unsure: 'Unsure' 
-under: Planning, development and Infrastructuer Act 2016 (SA) s1, ss68 ...
+under: PDI 2016 (SA) ss [3](http://www8.austlii.edu.au/cgi-bin/viewdoc/au/legis/sa/consol_act/pdaia2016415/s3.html) & [68](http://www8.austlii.edu.au/cgi-bin/viewdoc/au/legis/sa/consol_act/pdaia2016415/s68.html) / PDI (General) Regulations 2017 (SA) ss [3F(1)-(2)](http://classic.austlii.edu.au/au/legis/sa/consol_reg/pdair2017579/s3f.html)
 ---
 # Exit Screen if the user does not select the tree is within the area outlined in Red
 event: EDO1_exit_screen_1 

@@ -1,0 +1,17 @@
+---
+field: Attachment_A
+question: Thanks for using this application. Please find document below with the output.
+attachment:
+  - name: No Approval required
+    filename: Output_A
+    valid formats:
+      - pdf
+      - markdown: false
+    tagged pdf: True
+    description: |
+      Please find the attachment below:
+    content: |
+      Here is a copy of the output provided within the application. 
+      There is no need for council approval. This means that the activity being undertaken to the tree is permitted. You may wish to reach out to your local council if you want more information. If any areas of this application have raised questions for you, please contact the [Environmental Defenders Office](https://www.edo.org.au/).
+      Thanks for using the application.
+---

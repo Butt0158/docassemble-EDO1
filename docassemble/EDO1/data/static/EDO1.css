@@ -1,0 +1,53 @@
+.bg-primary{
+     background-color: rgb(242,127,52) !important;
+}
+
+.navbar{
+    background-color: rgb(116,198,157) !important;
+}
+
+.navbar .d-none {
+    color : #000;
+    font-weight: bolder;
+}
+.btn-primary{
+    color: rgb(0,0,0);
+    background-color: rgb(221,161,94);
+    border-color: rgb(221,161,94);
+}
+  
+.btn-primary:hover{
+    color: rgb(0,0,0);
+    background-color: rgba(188,108,37,0.9);
+    border-color: rgba(224,190,64,0.3);
+    box-shadow: 0 10px 20px -8px rgba(0, 0, 0,.7)
+}
+
+.btn-danger{
+    color: rgb(000,000,000);
+    background-color: rgb(56,163,165);
+    border-color: rgb(56,163,165);
+    box-shadow: 0 10px 20px -8px rgba(0, 0, 0,.7);
+}
+.btn-danger:hover{
+    background-color: (210,56,73,0.7);
+    box-shadow: 0 10px 20px -8px rgba(0, 0, 0,.7);
+}
+
+
+
+    © 2022 GitHub, Inc.
+
+    Terms
+    Privacy
+    Security
+    Status
+    Docs
+    Contact GitHub
+    Pricing
+    API
+    Training
+    Blog
+    About
+
+Loading complete

@@ -1,14 +1,10 @@
----
-question: "Is the tree alive or dead"
-field: EDO1_dead_alive 
-choices: 
-  - alive: 'True'
-  - dead: 'Tree Dead' 
+
 --- 
 # This question displays images of tree speices, and their respective name. If the users tree of conern matches any, they will select that button. The application will then go to an exit screen as the trees are exempted.
 # If the user's tree is not the same, they will press continue, and the application will continue.
+# Should be noted that whilst the legislation does list 24 trees, two of them are the same species
 question: |
-  Is the tree of concern one of the following 22 species?
+  Is the tree of concern one of the following 23 species? If not press 'None of These' in the bottom right
 field: EDO1_interrogatory
 buttons:
   - Box Elder: 'False'
@@ -57,8 +53,8 @@ buttons:
     image: Golden Willow
   - Peppercorn Tree: 'False'
     image: Peppercorn Tree
-  - None of these: 'True'
-    image: none of these 
+  - None of These: primary 
+under: PDI (General) Regulations 2017 (SA) s [3F(4)(b)](http://classic.austlii.edu.au/au/legis/sa/consol_reg/pdair2017579/s3f.html)
 ---
 image sets:
   freepik:
@@ -92,10 +88,12 @@ question: Your tree is exempt under legislation. Thanks for using our applicatio
 buttons: 
   - Exit: exit
   - Restart: restart
+under: PDI (General) Regulations 2017 (SA) s [3F(4)(b)](http://classic.austlii.edu.au/au/legis/sa/consol_reg/pdair2017579/s3f.html)
 --- 
 # These questions will be asked on the same page using show if statements
 # This question will determine which distance question is shown
-question: Exemptions
+question: |
+  Do any of these following exemptions apply?
 fields: 
   - "Is the tree located in a medium or High Risk Bushfire Hazard area? If you are unsure please use this [link](https://sappa.plan.sa.gov.au/), search for your address, and see what bushfire overlays apply.": EDO1_Bushfire_Hazard_area
     datatype: yesnoradio
@@ -113,6 +111,7 @@ fields:
   - "Is the tree an [*Agonis flexuosa*](https://www.legislation.sa.gov.au/__legislation/lz/c/r/planning%20development%20and%20infrastructure%20(general)%20regulations%202017/current/2017.24.auth.pdf) (Willow Myrtle) or any genus of [*Eucalyptus*](https://www.legislation.sa.gov.au/__legislation/lz/c/r/planning%20development%20and%20infrastructure%20(general)%20regulations%202017/current/2017.24.auth.pdf)?": EDO1_WM_E
     show if: EDO1_10_meters
     datatype: noyesradio
+under: PDI (General) Regulations 2017 (SA) ss [3F(4)(a)](http://classic.austlii.edu.au/au/legis/sa/consol_reg/pdair2017579/s3f.html) & [sch 4 item 18(1)(b)](http://classic.austlii.edu.au/cgi-bin/sinodisp/au/legis/sa/consol_reg/pdair2017579/sch4.html)
 ---
 # Unless the tree is exempt for any of the bushfire hazard reasons application will continue to this question, if the user answers No application will proceed to final questions
 question: "Does the 'Department of Transport and Infrastructure' plan on removing this tree?"
@@ -120,23 +119,18 @@ field: EDO1_department
 choices:
   - Yes: 'Plan to remove'
   - No: 'False'
----
-# Exit screen if the tree is dead
-event: EDO1_exit_screen_dead
-question: No approval is required to remove a dead tree 
-buttons:
-  - Exit: exit
-    url: https://www.edo.org.au
-  - Restart: restart
+under: Highways Act 1926 (SA) s [26A](http://www.austlii.edu.au/cgi-bin/viewdoc/au/legis/sa/consol_act/ha1926113/s26a.html)
+
 --- 
-# Exit screen if any exemptions other than the tree being dead apply
+# Exit screen if any exemptions other than the tree being part of the 23
 event: EDO1_exitscreen_4
 question: Tree can be removed
 subquestion: |
   This tree is exempt from protections under legislation. Development approval is not 
-  require for removal.
+  required for removal.
 buttons: 
   - Exit: exit
     url: https://www.edo.org.au
   - Restart: restart
+under: PDI (General) Regulations 2017 (SA) ss [3F(4)(a)](http://classic.austlii.edu.au/au/legis/sa/consol_reg/pdair2017579/s3f.html) & [sch 4 item 18(1)(b)](http://classic.austlii.edu.au/cgi-bin/sinodisp/au/legis/sa/consol_reg/pdair2017579/sch4.html) / Highways Act 1926 (SA) s [26A](http://www.austlii.edu.au/cgi-bin/viewdoc/au/legis/sa/consol_act/ha1926113/s26a.html)
 ---

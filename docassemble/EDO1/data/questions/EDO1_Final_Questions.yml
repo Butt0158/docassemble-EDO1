@@ -13,8 +13,7 @@ fields:
     - The ringbarking or topping lopping of a tree: 'False'
     - Any other substantial damage to a tree: 'False'
     - Other: 'Out of Scope'
-under: |
-  Note: explanation of maintenance pruning
+under: PDI 2016 (SA) s [3](http://www8.austlii.edu.au/cgi-bin/viewdoc/au/legis/sa/consol_act/pdaia2016415/s3.html)
 ---
 # Question will only be asked if user selects killing, removal, ringbarking, or other substantial damage
 question: Is the activity a matter of urgency to protect any person or building?
@@ -22,8 +21,7 @@ field: EDO1_activity_urgency
 choices:
   - Yes: 'Urgent'
   - No: 'Not Urgent'
-under: |
-  Planning, Development and Infrastructure Act 2016 (SA) s136(1)(a)/(b)
+under: PDI 2016 (SA) ss [136(1)(a)-(b)](http://www8.austlii.edu.au/cgi-bin/viewdoc/au/legis/sa/consol_act/pdaia2016415/s136.html)
 ---
 # This question will only be asked if user selects severing of branches
 question: Is less than 30% being removed?
@@ -31,6 +29,7 @@ field: EDO1_30_removal
 choices:
   - Yes: '<30%'
   - No: 'False'
+under: PDI (General) Regulations 2017 (SA) s [3F(6)(a)](http://classic.austlii.edu.au/au/legis/sa/consol_reg/pdair2017579/s3f.html)
 ---
 # If answer to previous question is no application will proceed to this question
 question: Is dead or deceased wood being removed?
@@ -38,6 +37,7 @@ field: EDO1_wood_removal
 choices:
   - Yes: 'Dead wood'
   - No: 'False'
+under: PDI (General) Regulations 2017 (SA) s [3F(6)(b)(i)](http://classic.austlii.edu.au/au/legis/sa/consol_reg/pdair2017579/s3f.html)
 ---
 # If answer to previous question is no application will proceed to this question
 question: Does the branch pose a material risk to buildings or persons?
@@ -45,7 +45,7 @@ field: EDO1_material_risk
 choices:
   - Yes: 'Material Risk'
   - No: 'Not Material Risk'
-
+under: PDI (General) Regulations 2017 (SA) ss [3F(6)(b)(ii)-(iii)](http://classic.austlii.edu.au/au/legis/sa/consol_reg/pdair2017579/s3f.html)
 ---
 # Exit screen if the user selects other
 event: EDO1_out_of_scope
@@ -60,8 +60,9 @@ field: EDO1_output_A
 question: |
   There is no need for council approval. This means that the activity being undertaken to the tree is permitted. You may wish to reach out to your local council if you want more information. If any areas of this application have raised questions for you, please contact the [Environmental Defenders Office](https://www.edo.org.au/).
 buttons:
-  - Email copy: 'True'
-  - No Email Copy: 'False' 
+  - I Want a Copy: 'CopyA'
+  - No Copy: 'No CopyA' 
+under: PDI 2016 (SA) s [136](http://www8.austlii.edu.au/cgi-bin/viewdoc/au/legis/sa/consol_act/pdaia2016415/s136.html)
 ---
 field: EDO1_output_B
 question: |
@@ -79,8 +80,9 @@ question: |
   If there is no application listed, this activity may be a breach of planning laws. There are penalties if planning affecting trees is undertaken without approval. These penalties are found under section 215 of the Planning, Development, and Infrastructure Act 2016 and can incur a maximum penalty of $120,000. If any areas of this application have raised questions for you, please contact the [Environmental Defenders Office](https://www.edo.org.au/).
  
 buttons:
-  - Email Copy: 'True'
-  - No Email Copy: 'False' 
+  - I Want a Copy: 'CopyB'
+  - No Copy: 'No CopyB' 
+under: PDI 2016 (SA) s [215](http://www8.austlii.edu.au/cgi-bin/viewdoc/au/legis/sa/consol_act/pdaia2016415/s215.html)
 ---
 event: EDO1_exit_screen_finale
 question: "Thanks For Using Tree Ark"
