@@ -65,7 +65,7 @@ code: |
         EDO1_regulated
     if EDO1_circumference == '<2':
       EDO1_exit_screen_3  
-  if EDO1_interrogatory == 'False':
+  if EDO1_exemption_images == 'False':
     EDO1_trees_end
   if EDO1_Bushfire_Hazard_area == True:
     if EDO1_fire_hazard == True:

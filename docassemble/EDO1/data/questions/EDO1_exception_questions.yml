@@ -3,8 +3,10 @@
 # If the user's tree is not the same, they will press continue, and the application will continue.
 # Should be noted that whilst the legislation does list 24 trees, two of them are the same species
 question: |
-  Is the Tree of Concern One of he Following 23 Species? If not Press 'None of These' located in the Bottom Right
-field: EDO1_interrogatory
+  Is the Tree of Concern One of he Following 23 Species? 
+subquestion: |
+  If it is not Press 'None of These' located in the Bottom Right
+field: EDO1_exemption_images
 buttons:
   - Box Elder: 'False'
     image: Box Elder 
