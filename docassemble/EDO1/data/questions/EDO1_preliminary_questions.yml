@@ -5,13 +5,13 @@ Question: |
   **Welcome to Tree Ark!**
 subquestion: |
   This application is designed to provide you with information regarding the 
-  *protection of a particular tree* in urban South Australia. 
+  protection of a particular tree in urban South Australia. 
   
   ***Disclaimer:***
   
   * The advice provided is **not** to be taken as legal advice
   * This application is **not** a substitute for seeking independent legal advice
-  * You will need access and/or basic information regarding the tree of concern
+  * You will need access to basic information regarding the tree of concern
 
   To continue you must accept these terms.  
 event: EDO1_disclaimer
@@ -22,33 +22,30 @@ buttons:
 --- 
 # If the user accepts the application terms on the welcome screen, the application will proceed to this question. If the tree is outside of the area in red this will lead to exit screen 2 below.
 question: |
-    Is The Tree of Concern Located Within the Area Outlined Red in the Map Shown Below?
+    Is the tree located within the red area outlined below?
 subquestion: |
   [FILE Map-1-Greater-Adelaide-Region-1.jpg, 115%]
 field: EDO1_district 
 choices:
-  - Yes It Is: 'True'
-  - No It Is Not: 'Not Urban'
+  - Yes: 'True'
+  - No: 'Not Urban'
 ---
 # If the tree is located in the red area, the application will continue to this question which will give the user the option to save time if they already know the tree is significant or regulated.
 Question: |
-  Your Tree of Concern Might Have Special Protection Under the Law. 
+  The tree might have special protection under the law. 
 subquestion: |
-  Depending upon the tree's size and species, it may be legally considered
-  *'significant'* or *'regulated'*. These terms have **distinct legal meaning**, if 
-  you are unfamiliar with these legal terms please select *'unsure'*.  
-  
-  Is the Tree Significant or Regulated?
+  Within legislation a tree may be 'significant' or 'regulated'. These terms  have **distinct legal meanings**. If these terms are unfamiliar, please select 'unsure'.    
 field: EDO1_sigreg
 choices:
-  - It Is Significant: 'Significant'
-  - It Is Regulated: 'Regulated'
+  - Significant: 'Significant'
+  - Regulated: 'Regulated'
   - Unsure: 'Unsure' 
 under: PDI 2016 (SA) ss [3](http://www8.austlii.edu.au/cgi-bin/viewdoc/au/legis/sa/consol_act/pdaia2016415/s3.html) & [68](http://www8.austlii.edu.au/cgi-bin/viewdoc/au/legis/sa/consol_act/pdaia2016415/s68.html) / PDI (General) Regulations 2017 (SA) ss [3F(1)-(2)](http://classic.austlii.edu.au/au/legis/sa/consol_reg/pdair2017579/s3f.html)
 ---
 # Exit Screen if the user does not select the tree is within the area outlined in Red
 event: EDO1_exit_screen_1 
-question: "Sorry, This Application Only Applies To Trees Located In Urban Areas Of South Australia"
+question: "Uh oh!"
+subquestion: "The application only applies to trees located in urban South Australia"
 buttons:
   - Exit: exit
     url: https://www.edo.org.au

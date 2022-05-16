@@ -2,21 +2,22 @@
 # If user selects severing of branches, the application will ask the question about how much is being removed
 # Is user selects other, application will proceed to an exit screen as the legislation does not cover this and thus is out of scope of the application
 # If killing, removal, ringbarking, or other substantial damage, is selected, the application will ask the question about urgency of maintainence
-question: What Actions are Currently Being Undertaken to the Tree?
+question: |
+  What actions are currently being undertaken to the tree?
 fields: 
   - no label: EDO1_actions
     datatype: radio
     choices:
-    - The Killing or Destruction of a Tree: 'False'
-    - The Removal of a Tree: 'False'
-    - The Severing of Branches, Limbs, Stems or Trunk of a Tree: 'Maintainance Pruning'
-    - The Ringbarking or Topping Lopping of a Tree: 'False'
-    - Any Other Substantial Damage to a Tree: 'False'
+    - The killing or destruction of a tree: 'False'
+    - The removal of a tree: 'False'
+    - The severing of branches, limbs, stems or trunk of a tree: 'Maintainance Pruning'
+    - The ringbarking, topping or lopping of a tree: 'False'
+    - Any other substantial damage to a tree: 'False'
     - Other: 'Out of Scope'
 under: PDI 2016 (SA) s [3](http://www8.austlii.edu.au/cgi-bin/viewdoc/au/legis/sa/consol_act/pdaia2016415/s3.html)
 ---
 # Question will only be asked if user selects killing, removal, ringbarking, or other substantial damage
-question: Is the Activity a Matter of Urgency to Protect Any Person or Building?
+question: Is the activity a matter of urgency to protect any person or building?
 field: EDO1_activity_urgency 
 choices:
   - Yes: 'Urgent'
@@ -24,7 +25,7 @@ choices:
 under: PDI 2016 (SA) ss [136(1)(a)-(b)](http://www8.austlii.edu.au/cgi-bin/viewdoc/au/legis/sa/consol_act/pdaia2016415/s136.html)
 ---
 # This question will only be asked if user selects severing of branches
-question: Does It Appear as Though Less Than 30% is Being Removed?
+question: Does it appear that less than 30% of the tree is being removed?
 field: EDO1_30_removal
 choices:
   - Yes: '<30%'
@@ -32,7 +33,7 @@ choices:
 under: PDI (General) Regulations 2017 (SA) s [3F(6)(a)](http://classic.austlii.edu.au/au/legis/sa/consol_reg/pdair2017579/s3f.html)
 ---
 # If answer to previous question is no application will proceed to this question
-question: Does It Appear that Dead Wood is Being Removed?
+question: Does it appear that dead wood is being removed?
 field: EDO1_wood_removal
 choices:
   - Yes: 'Dead wood'
@@ -40,7 +41,7 @@ choices:
 under: PDI (General) Regulations 2017 (SA) s [3F(6)(b)(i)](http://classic.austlii.edu.au/au/legis/sa/consol_reg/pdair2017579/s3f.html)
 ---
 # If answer to previous question is no application will proceed to this question
-question: Does It Appear that the Branch(s) Pose a Material Risk to Buildings or Persons?
+question: Does it appear that the branch(s) pose a material risk to buildings or persons?
 field: EDO1_material_risk
 choices:
   - Yes: 'Material Risk'
@@ -49,7 +50,10 @@ under: PDI (General) Regulations 2017 (SA) ss [3F(6)(b)(ii)-(iii)](http://classi
 ---
 # Exit screen if the user selects other
 event: EDO1_out_of_scope
-question: This is Outside The Scope of his Application. 
+question: | 
+  Uh Oh!
+subquestion: |
+  This action is outside the scope of Tree Ark. Please contact the EDO for more information. 
 buttons:
   - Exit: exit
     url: https://www.edo.org.au
@@ -58,7 +62,7 @@ buttons:
 
 field: EDO1_output_A
 question: |
-  There is No Need for Council Approval.
+  There is no need for planning approval.
 subquestion: |
   This means that the activity being undertaken to the tree is permitted. You may wish to reach out to your local council if you want more information. If any areas of this application have raised questions for you, please contact the [Environmental Defenders Office](https://www.edo.org.au/).
 buttons:
@@ -68,7 +72,7 @@ under: PDI 2016 (SA) s [136](http://www8.austlii.edu.au/cgi-bin/viewdoc/au/legis
 ---
 field: EDO1_output_B
 question: |
-  It is Likely that the Activity Needs Planning Approval.
+  It is likely that the activity needs planning approval.
 subquestion: |
   Go to [PlanSA](https://plan.sa.gov.au/) to check address for information about any planning application decided or about to be decided. You can also check the planning policies which apply to any application found [here](https://plan.sa.gov.au/resources/planning/state_planning_policies).  
 
@@ -89,7 +93,7 @@ buttons:
 under: PDI 2016 (SA) s [215](http://www8.austlii.edu.au/cgi-bin/viewdoc/au/legis/sa/consol_act/pdaia2016415/s215.html)
 ---
 event: EDO1_exit_screen_finale
-question: "Thanks For Using Tree Ark"
+question: "Thank you for using Tree Ark"
 buttons:
   - Exit: exit
     url: https://www.edo.org.au

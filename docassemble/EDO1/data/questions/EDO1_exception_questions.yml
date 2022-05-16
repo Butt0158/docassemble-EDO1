@@ -3,11 +3,11 @@
 # If the user's tree is not the same, they will press continue, and the application will continue.
 # Should be noted that whilst the legislation does list 24 trees, two of them are the same species
 question: |
-  Is the Tree of Concern One of he Following 23 Species? 
+   Is the tree is one of the following 23 species?
 subquestion: |
-  If it is not Press 'None of These' located in the Bottom Right
+  If not, select **'None of These'** located in the bottom right
 field: EDO1_exemption_images
-buttons:
+buttons: 
   - Box Elder: 'False'
     image: Box Elder 
   - Silver Maple: 'False' 
@@ -76,7 +76,7 @@ image sets:
       London Plane: Platanus_x_acerifolia_London_Plane.jpg
       White popular: Populus_alba_White_poplar.jpg
       Lombardy Poplar: Populus_nigra_var._italica_Lombardy_Poplar.jpg
-      Black Locust: Robinia_pseudoacacia_Black_Locust.jpg
+      Black Locust: Black_Locust.jpeg
       Weeping Willow: Salix_babylonica_Weeping_Willow.jpg
       Pencil Willow: Pencil_Willow.jpg
       Crack Willow: Salix_fragilis_Crack_Willow.jpg
@@ -85,7 +85,7 @@ image sets:
       Peppercorn Tree: Schinus_Areira_Peppercorn_Tree.jpg    
 ---
 event: EDO1_trees_end
-question: Your Tree is Exempt Under Legislation. Thanks for Using Tree Ark!
+question: Your tree is exempt under legislation and therefore cannot be removed, if you have further questions please contact the [Environmental Defenders Office](https://www.edo.org.au)
 buttons: 
   - Exit: exit
     url: https://www.edo.org.au
@@ -95,28 +95,28 @@ under: PDI (General) Regulations 2017 (SA) s [3F(4)(b)](http://classic.austlii.e
 # These questions will be asked on the same page using show if statements
 # This question will determine which distance question is shown
 question: |
-  Do any of these following exemptions apply?
+  Do any of the following exemptions apply?
 fields: 
-  - "Is the Tree Located in a Medium or High Risk Bushfire Hazard area? If You Are Unsure Please Use This [link](https://sappa.plan.sa.gov.au/), Search for Your Address, and See What Bushfire Overlays Apply.": EDO1_Bushfire_Hazard_area
+  - "Is the tree located in a medium or high risk bushfire Hazard area? If you are unsure please use this [link](https://sappa.plan.sa.gov.au/), Search for your address and see what bushfire overlays apply.": EDO1_Bushfire_Hazard_area
     datatype: yesnoradio
 #This question will only show if user is not located in a medium or high bushfire hazard area
-  - "Is the Tree Located Within Twenty Meters of an Existing Dwelling": EDO1_fire_hazard
+  - "Does it appear that the tree is located within twenty meters of an existing dwelling?": EDO1_fire_hazard
     datatype: yesnoradio
     show if: EDO1_Bushfire_Hazard_area
 # Alternative to above question if user is located in a medium or high bushfire hazard area
-  - "Is the Tree Located Within Ten Meters of an Existing Dwelling or In-Ground Swimming Pool": EDO1_10_meters
+  - "Does it appear that the tree is located within ten meters of an existing dwelling or in-Ground swimming pool": EDO1_10_meters
     show if: 
       variable: EDO1_Bushfire_Hazard_area
       is: False
     datatype: yesnoradio
 # This question will only show if user is in a bushfire hazard area and the tree is within 10 meters of a dwelling or pool
-  - "Is The Tree A Willow Myrtle or any genus of Eucalyptus?": EDO1_WM_E
+  - "Is the tree a willow myrtle or any genus of eucalyptus?": EDO1_WM_E
     show if: EDO1_10_meters
     datatype: noyesradio
 under: PDI (General) Regulations 2017 (SA) ss [3F(4)(a)](http://classic.austlii.edu.au/au/legis/sa/consol_reg/pdair2017579/s3f.html) & [sch 4 item 18(1)(b)](http://classic.austlii.edu.au/cgi-bin/sinodisp/au/legis/sa/consol_reg/pdair2017579/sch4.html)
 ---
 # Unless the tree is exempt for any of the bushfire hazard reasons application will continue to this question, if the user answers No application will proceed to final questions
-question: "Does the Department of Transport and Infrastructure Plan on Removing this Tree?"
+question: "Does the 'Department of Transport and Infrastructure' plan on removing this tree?"
 field: EDO1_department
 choices:
   - Yes: 'Plan to remove'
@@ -126,10 +126,9 @@ under: Highways Act 1926 (SA) s [26A](http://www.austlii.edu.au/cgi-bin/viewdoc/
 --- 
 # Exit screen if any exemptions other than the tree being part of the 23
 event: EDO1_exitscreen_4
-question: Tree can be removed
+question: This tree is exempt!
 subquestion: |
-  This Tree is Exempt from Protections Under Legislation. Development Approval is Not 
-  Required for Removal.
+   The legislation does not protect this tree. No development approval is required for removal. 
 buttons: 
   - Exit: exit
     url: https://www.edo.org.au

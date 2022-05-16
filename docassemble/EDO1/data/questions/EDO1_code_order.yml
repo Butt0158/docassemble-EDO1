@@ -1,4 +1,5 @@
 ---
+# Provides a brief description of the application and the authors. 
 metadata:
   title: |
     Tree Ark
@@ -15,14 +16,15 @@ metadata:
     - organisation: Flinders University
     - name: Zac Caldicott-Millard 
     - organisation: Flinders University
-  revision_date: 2022-05-14
+  revision_date: 2022-05-16
 ---
 # Remove debugging and logging in features
 features:
   css: EDO1.css
   debug: False
 ---
-# The code for this application is spread across multiple files as to preventing have one very long winded messy file, as a result this sections informs the application to incorporate the listed code 
+# The code for this application is spread across multiple files. This section ensures the main code reads all these files. 
+# This section also allows for the desired code to be easier edited (i.e for legislation update). 
 include:
   - EDO1_tree_questions.yml
   - EDO1_exception_questions.yml
@@ -31,7 +33,7 @@ include:
   - Attachment_A.yml
   - Attachment_B.yml
 ---
-# Provides details for footer
+# Provides details for footer.
 default screen parts:
   post: |
     <div style="display: flex; height: 170px; align-items: flex-end">
@@ -39,7 +41,7 @@ default screen parts:
     <small><i>
     Developed by Flinders University for the Environmental Defenders Office
 --- 
-# Manually dictates the order of the code and the contigency of the questions 
+# Manually dictates the order of the code and the contigency of the questions. 
 mandatory: true
 code: |
   if EDO1_district == 'Not Urban':
@@ -108,13 +110,11 @@ code: |
   if EDO1_activity_urgency == 'Urgent':
     if EDO1_output_A == 'CopyA':
       Attachment_A
-      EDO1_exit_screen_finale
     elif EDO1_output_A == 'No CopyA':
       EDO1_exit_screen_finale
   if EDO1_activity_urgency == 'Not Urgent':
     if EDO1_output_B == 'CopyB':
       Attachment_B
-      EDO1_exit_screen_finale
     elif EDO1_output_B == 'No CopyB':
       EDO1_exit_screen_finale
 ---
