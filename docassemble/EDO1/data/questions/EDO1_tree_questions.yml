@@ -45,7 +45,7 @@ choices:
 - No: 'Less than 625mm'
 under: PDI (General) Regulations 2017 (SA) ss [3F(1)-(2)](http://classic.austlii.edu.au/au/legis/sa/consol_reg/pdair2017579/s3f.html)
 ---
-# This statement is provided to let user know that the regulated tree is protected, however exemptions may still apply.
+# This statement is provided to let the user know that the regulated tree is protected, however exemptions may still apply.
 # When user selects 'continue', application proceeds to EDO1_exemption_images.
 question: |
   A regulated tree is protected under legislation. However, exemptions may still apply!
@@ -55,7 +55,7 @@ field: EDO1_regulated
 button: 
 - continue: continue 'True'
 ---
-## This statement is provided to let user know that the significant tree is protected, however exemptions may still apply. 
+## This statement is provided to let the user know that the significant tree is protected, however exemptions may still apply. 
 # When user selects 'continue', application proceeds to EDO1_exemption_images.
 question: |
    A significant tree is protected under legislation. However, exemptions may still apply!
