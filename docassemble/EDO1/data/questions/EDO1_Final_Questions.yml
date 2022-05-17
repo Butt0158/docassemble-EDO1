@@ -65,7 +65,7 @@ buttons:
   - Restart: restart
 ---
 ## This is Output A for the application.
-# If the user selects 'I want a copy', application proceeds to Attachment_A.
+# If the user selects 'I want a copy', application proceeds to EDO1_Attachment_A.
 # If the user selects 'No copy', application proceeds to EDO1_exit_screen_finale.
 field: EDO1_output_A
 question: |
@@ -78,7 +78,7 @@ buttons:
 under: PDI 2016 (SA) s [136](http://www8.austlii.edu.au/cgi-bin/viewdoc/au/legis/sa/consol_act/pdaia2016415/s136.html)
 ---
 ## This is Output B for the application.
-# If the user selects 'I want a copy', application proceeds to Attachment_B.
+# If the user selects 'I want a copy', application proceeds to EDO1_Attachment_B.
 # If the user selects 'No copy', application proceeds to EDO1_exit_screen_finale.
 field: EDO1_output_B
 question: |
