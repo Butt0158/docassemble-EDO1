@@ -14,7 +14,6 @@ fields:
     - The ringbarking, topping, or lopping of a tree: 'False'
     - Any other substantial damage to a tree: 'False'
     - Other: 'Out of Scope'
-under: PDI 2016 (SA) s [3](http://www8.austlii.edu.au/cgi-bin/viewdoc/au/legis/sa/consol_act/pdaia2016415/s3.html)
 ---
 # If user selects 'Yes', application will proceed to EDO1_Output_A.
 # If user selects 'No', application will proceed to EDO1_Output_B. 
@@ -23,7 +22,6 @@ field: EDO1_activity_urgency
 choices:
   - Yes: 'Urgent'
   - No: 'Not Urgent'
-under: PDI 2016 (SA) ss [136(1)(a)-(b)](http://www8.austlii.edu.au/cgi-bin/viewdoc/au/legis/sa/consol_act/pdaia2016415/s136.html)
 ---
 ## Only asked when 'The severing of branches, limbs, stems, or trunk of a tree' is selected in EOD1_actions.
 # If the user selects 'Yes', application proceeds to EDO1_Output_A.
@@ -33,7 +31,6 @@ field: EDO1_30_removal
 choices:
   - Yes: '<30%'
   - No: 'False'
-under: PDI (General) Regulations 2017 (SA) s [3F(6)(a)](http://classic.austlii.edu.au/au/legis/sa/consol_reg/pdair2017579/s3f.html)
 ---
 # If the user selects 'Yes', application proceeds to EDO1_Output_A.
 # If the user selects 'No', application proceeds to EDO1_material_risk.
@@ -42,7 +39,6 @@ field: EDO1_wood_removal
 choices:
   - Yes: 'Dead wood'
   - No: 'False'
-under: PDI (General) Regulations 2017 (SA) s [3F(6)(b)(i)](http://classic.austlii.edu.au/au/legis/sa/consol_reg/pdair2017579/s3f.html)
 ---
 # If the user selects 'Yes', application proceeds to EDO1_Output_A.
 # If the user selects 'No', application proceeds to EDO1_Output_B. 
@@ -51,7 +47,6 @@ field: EDO1_material_risk
 choices:
   - Yes: 'Material Risk'
   - No: 'Not Material Risk'
-under: PDI (General) Regulations 2017 (SA) ss [3F(6)(b)(ii)-(iii)](http://classic.austlii.edu.au/au/legis/sa/consol_reg/pdair2017579/s3f.html)
 ---
 # Exit screen shown when user selects 'Other' in EDO1_actions. Provides opportunity to 'exit' to the EDO website or 'restart' the application. 
 event: EDO1_out_of_scope
@@ -75,7 +70,6 @@ subquestion: |
 buttons:
   - I want a copy: 'CopyA'
   - No copy: 'No CopyA' 
-under: PDI 2016 (SA) s [136](http://www8.austlii.edu.au/cgi-bin/viewdoc/au/legis/sa/consol_act/pdaia2016415/s136.html)
 ---
 ## This is Output B for the application.
 # If the user selects 'I want a copy', application proceeds to EDO1_Attachment_B.
@@ -100,7 +94,6 @@ subquestion: |
 buttons:
   - I want a copy: 'CopyB'
   - No copy: 'No CopyB' 
-under: PDI 2016 (SA) s [215](http://www8.austlii.edu.au/cgi-bin/viewdoc/au/legis/sa/consol_act/pdaia2016415/s215.html)
 ---
 # Final exit screen once user has completed the application. Provides options to 'exit' to the EDO website or 'restart' the application.
 event: EDO1_exit_screen_finale

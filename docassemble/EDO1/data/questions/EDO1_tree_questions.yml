@@ -18,7 +18,6 @@ field: EDO1_trunk
 choices: 
   - Singular: 'True'  
   - Multiple: 'Multiple'
-under: PDI (General) Regulations 2017 (SA) ss [3F(1)-(2)](http://classic.austlii.edu.au/au/legis/sa/consol_reg/pdair2017579/s3f.html)
 ---
 ## This question is asked to categorise the tree according to parameters provided within legislation. 
 # If user selects 'Less than 2 meters', application proceeds to EDO1_exit_screen_3.
@@ -31,7 +30,6 @@ choices:
   - Less than 2 meters: '<2'
   - 2 meters or more: '2+'
   - 3 meters or more: '3+'
-under: PDI (General) Regulations 2017 (SA) s [3F(1)](http://classic.austlii.edu.au/au/legis/sa/consol_reg/pdair2017579/s3f.html) 
 --- 
 ## This question is only asked if the user selects 'multiple' in EDO1_trunk and when the user selects either '2 meters or more' / '3 meters or more' in EDO1_circumference.
 # If the user selects 'Yes', application proceeds to EDO1_regulated (if '2 meters or more') or EDO1_significant (if '3 meters or more'). 
@@ -43,7 +41,6 @@ datatype: radio
 choices: 
 - Yes: 'True'
 - No: 'Less than 625mm'
-under: PDI (General) Regulations 2017 (SA) ss [3F(1)-(2)](http://classic.austlii.edu.au/au/legis/sa/consol_reg/pdair2017579/s3f.html)
 ---
 # This statement is provided to let the user know that the regulated tree is protected, however exemptions may still apply.
 # When user selects 'continue', application proceeds to EDO1_exemption_images.

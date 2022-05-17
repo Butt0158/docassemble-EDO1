@@ -46,7 +46,6 @@ choices:
   - Significant: 'Significant'
   - Regulated: 'Regulated'
   - Unsure: 'Unsure' 
-under: PDI 2016 (SA) ss [3](http://www8.austlii.edu.au/cgi-bin/viewdoc/au/legis/sa/consol_act/pdaia2016415/s3.html) & [68](http://www8.austlii.edu.au/cgi-bin/viewdoc/au/legis/sa/consol_act/pdaia2016415/s68.html) / PDI (General) Regulations 2017 (SA) ss [3F(1)-(2)](http://classic.austlii.edu.au/au/legis/sa/consol_reg/pdair2017579/s3f.html)
 ---
 ## Exit screen which provides opportunity to 'restart' application or 'exit' to the EDO website. 
 event: EDO1_exit_screen_1 
