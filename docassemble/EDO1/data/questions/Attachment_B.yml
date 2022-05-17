@@ -1,10 +1,10 @@
 ---
-# If the user requests a copy of the application output they can either download a pdf or recieve it in an email, using the template file EDO_Output_B.docx.
+## If the user requests a copy of the application output, they can either download a pdf or receive it in an email, using the template file EDO_Output_B.docx.
 event: Attachment_B
-question: Thanks for using this application. Please find document below with the output.
-
+question: |
+  Thanks for using Tree Ark. Please find document below with the output.
 attachment:
-  name: Approval required
+  name: from Tree Ark
   filename: Output_B
   docx template file: EDO_Output_B.docx
   valid formats:

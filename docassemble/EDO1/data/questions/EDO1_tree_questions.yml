@@ -1,7 +1,9 @@
 ---
-# This series of questions will be asked if the user selects they are unsure if the tree is significant or regulated
-# If the tree is listed in the PlanSA document application will skip to telling the user the tree is significant, otherwise it will continue to the trunk questions
-question: "Is the tree listed in Part 10 of the 'Significant Tree list' on PlanSA?"
+## This question is asked to ensure trees which are deemed significant via unique characteristics are covered by the application.  
+# If user selects 'Listed', application proceeds to EDO1_significant.
+# If user selects 'Not Listed', application proceeds to EDO1_trunk. 
+question: |
+  Is the tree listed in Part 10 of the 'Significant Tree list' on PlanSA?
 subquestion: |
   Please click [here](https://code.plan.sa.gov.au/home/browse_the_planning_and_design_code?code=browse) to view the list, and select part 10 on the side bar.
 field: EDO1_Part10
@@ -9,25 +11,31 @@ choices:
   - Not Listed: 'Tree not listed'
   - Listed: 'Tree listed'
 ---
-# This question will determine if the aplication asks the question about the average circumferance of the trunks if they select multiple trunks
-question: "Does the tree have a singular trunk or multiple trunks?"  
+# If user selects 'Singular' or 'Multiple', application proceeds to EDO1_circumference.
+question: |
+  Does the tree have a singular trunk or multiple trunks? 
 field: EDO1_trunk
 choices: 
   - Singular: 'True'  
   - Multiple: 'Multiple'
 under: PDI (General) Regulations 2017 (SA) ss [3F(1)-(2)](http://classic.austlii.edu.au/au/legis/sa/consol_reg/pdair2017579/s3f.html)
 ---
-# No matter the answer to the previous question, the application will ask this question to determien if the tree is considered significant or regulated
-question: "What is the total circumference of the trunk(s) measured from 1 meter above natural ground level?"
+## This question is asked to categorise the tree according to parameters provided within legislation. 
+# If user selects 'Less than 2 meters', application proceeds to EDO1_exit_screen_3.
+# If user selects '2 meters or more', application proceeds to EDO1_regulated.
+# If user selects '3 meters or more', application proceeds to EDO1_significant. 
+question: |
+  What is the total circumference of the trunk(s) measured from 1 meter above natural ground level?
 field: EDO1_circumference
 choices: 
   - Less than 2 meters: '<2'
   - 2 meters or more: '2+'
   - 3 meters or more: '3+'
-  
 under: PDI (General) Regulations 2017 (SA) s [3F(1)](http://classic.austlii.edu.au/au/legis/sa/consol_reg/pdair2017579/s3f.html) 
 --- 
-# This question will only ask if the user selected multiple trunks and the average circumference is 2 or 3 meters
+## This question is only asked if the user selects 'multiple' in EDO1_trunk and when the user selects either '2 meters or more' / '3 meters or more' in EDO1_circumference.
+# If the user selects 'Yes', application proceeds to EDO1_regulated (if '2 meters or more') or EDO1_significant (if '3 meters or more'). 
+# If the user selects 'No', application proceeds to EDO1_exit_screen_3. 
 question: |
   Is the average circumference of the trunks greater than 625mm?
 field: EDO1_multiple_circumference
@@ -37,7 +45,8 @@ choices:
 - No: 'Less than 625mm'
 under: PDI (General) Regulations 2017 (SA) ss [3F(1)-(2)](http://classic.austlii.edu.au/au/legis/sa/consol_reg/pdair2017579/s3f.html)
 ---
-# This will continue to the exemption questions, as it is possible that exemptions to being regulated still apply
+# This statement is provided to let user know that the regulated tree is protected, however exemptions may still apply.
+# When user selects 'continue', application proceeds to EDO1_exemption_images.
 question: |
   A regulated tree is protected under legislation. However, exemptions may still apply!
 subquestion: |
@@ -46,7 +55,8 @@ field: EDO1_regulated
 button: 
 - continue: continue 'True'
 ---
-# This will continue to the exemption questions, as it is possible that exemptions to being regulated still apply
+## This statement is provided to let user know that the significant tree is protected, however exemptions may still apply. 
+# When user selects 'continue', application proceeds to EDO1_exemption_images.
 question: |
    A significant tree is protected under legislation. However, exemptions may still apply!
 subquestion: |
@@ -55,7 +65,7 @@ field: EDO1_significant
 button: 
 - continue: continue 'True'
 ---
-# Exit screen if the tree's trunk(s) are less then 2 meters in circumference
+# Exit screen if the tree's trunk circumference is 'less than 2 meters' or trunk circumference is less than 625mm. 
 event: EDO1_exit_screen_3
 question: |
   The tree is neither significant or regulated. No approval is required for removal. If you have further questions please contact the [Environmental Defenders Office](https://www.edo.org.au)

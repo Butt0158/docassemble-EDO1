@@ -3,8 +3,9 @@
 metadata:
   title: |
     Tree Ark
-  decription: |
-    Application designed to assit users seeking informating on tree protection in urban South Australia
+  description: |
+    Application designed to assist users seeking information on tree protection 
+    in urban South Australia
   Authors:
     - name: Jordan Buttery
     - organisation: Flinders University
@@ -18,13 +19,14 @@ metadata:
     - organisation: Flinders University
   revision_date: 2022-05-16
 ---
-# Remove debugging and logging in features
+# Links the custom CSS file into the application.
+# Removes debugging and logging in features.
 features:
   css: EDO1.css
   debug: False
 ---
 # The code for this application is spread across multiple files. This section ensures the main code reads all these files. 
-# This section also allows for the desired code to be easier edited (i.e for legislation update). 
+# Also allows desired code area to be identified for easy editing (i.e for legislation update). 
 include:
   - EDO1_tree_questions.yml
   - EDO1_exception_questions.yml
@@ -41,7 +43,7 @@ default screen parts:
     <small><i>
     Developed by Flinders University for the Environmental Defenders Office
 --- 
-# Manually dictates the order of the code and the contigency of the questions. 
+# Manually dictates the order of the code and the contingency of the questions.
 mandatory: true
 code: |
   if EDO1_district == 'Not Urban':
@@ -82,7 +84,7 @@ code: |
   EDO1_actions
   if EDO1_actions == 'Out of Scope':
     EDO1_out_of_scope
-  if EDO1_actions == 'Maintainance Pruning':
+  if EDO1_actions == 'Maintenance Pruning':
     if EDO1_30_removal == '<30%':
       if EDO1_output_A == 'CopyA':
         Attachment_A

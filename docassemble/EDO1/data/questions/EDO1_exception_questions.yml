@@ -1,9 +1,9 @@
 --- 
-# This question displays images of tree speices, and their respective name. If the users tree of conern matches any, they will select that button. The application will then go to an exit screen as the trees are exempted.
-# If the user's tree is not the same, they will press continue, and the application will continue.
-# Should be noted that whilst the legislation does list 24 trees, two of them are the same species
+## This question displays images of tree species, and their respective name. Please Note: whilst the legislation does list 24 trees, two of them are the same species.  
+# If the user selects a tree listed, application proceeds to EDO1_trees_end. 
+# If the user selects 'None of these', the application proceeds to EDO1_Bushfire_Hazard_area. 
 question: |
-   Is the tree is one of the following 23 species?
+   Is the tree one of the following 23 species?
 subquestion: |
   If not, select **'None of These'** located in the bottom right
 field: EDO1_exemption_images
@@ -84,35 +84,40 @@ image sets:
       Golden Willow: Golden_Weeping_Willow.jpg
       Peppercorn Tree: Schinus_Areira_Peppercorn_Tree.jpg    
 ---
+# This event lets the user know that the tree is exempt under legislation and allows the user to 'exit' or 'restart' the application. 
 event: EDO1_trees_end
-question: Your tree is exempt under legislation and therefore cannot be removed, if you have further questions please contact the [Environmental Defenders Office](https://www.edo.org.au)
+question: The tree is exempt under legislation and therefore can be removed. If you have further questions please contact the [Environmental Defenders Office](https://www.edo.org.au)
 buttons: 
   - Exit: exit
     url: https://www.edo.org.au
   - Restart: restart
 under: PDI (General) Regulations 2017 (SA) s [3F(4)(b)](http://classic.austlii.edu.au/au/legis/sa/consol_reg/pdair2017579/s3f.html)
 --- 
-# These questions will be asked on the same page using show if statements
-# This question will determine which distance question is shown
+## These questions will be asked on the same page using showif statements.
 question: |
   Do any of the following exemptions apply?
 fields: 
   - "Is the tree located in a medium or high risk bushfire Hazard area? If you are unsure please use this [link](https://sappa.plan.sa.gov.au/), Search for your address and see what bushfire overlays apply.": EDO1_Bushfire_Hazard_area
     datatype: yesnoradio
-#This question will only show if user is not located in a medium or high bushfire hazard area
+# If the user selects 'Yes', application shows EDO1_fire_hazard
+# If the user selects 'No', application shows EDO1_10_meters
   - "Does it appear that the tree is located within twenty meters of an existing dwelling?": EDO1_fire_hazard
     datatype: yesnoradio
     show if: EDO1_Bushfire_Hazard_area
-# Alternative to above question if user is located in a medium or high bushfire hazard area
+# If the user selects 'Yes', application proceeds to EDO1_exitscreen_4. 
+# If the user selects 'No', application proceeds to EDO1_department. 
   - "Does it appear that the tree is located within ten meters of an existing dwelling or in-Ground swimming pool": EDO1_10_meters
     show if: 
       variable: EDO1_Bushfire_Hazard_area
       is: False
     datatype: yesnoradio
-# This question will only show if user is in a bushfire hazard area and the tree is within 10 meters of a dwelling or pool
+# If the user selects 'Yes', application proceeds to EDO1_WM_E.
+# If the user selects 'No', application proceeds to EDO1_department. 
   - "Is the tree a willow myrtle or any genus of eucalyptus?": EDO1_WM_E
     show if: EDO1_10_meters
     datatype: noyesradio
+# If the user selects 'Yes', application proceeds to EDO1_exitscreen_4.
+# If the user selects 'No', application proceeds to EDO1_department. 
 under: PDI (General) Regulations 2017 (SA) ss [3F(4)(a)](http://classic.austlii.edu.au/au/legis/sa/consol_reg/pdair2017579/s3f.html) & [sch 4 item 18(1)(b)](http://classic.austlii.edu.au/cgi-bin/sinodisp/au/legis/sa/consol_reg/pdair2017579/sch4.html)
 ---
 # Unless the tree is exempt for any of the bushfire hazard reasons application will continue to this question, if the user answers No application will proceed to final questions
@@ -124,7 +129,8 @@ choices:
 under: Highways Act 1926 (SA) s [26A](http://www.austlii.edu.au/cgi-bin/viewdoc/au/legis/sa/consol_act/ha1926113/s26a.html)
 
 --- 
-# Exit screen if any exemptions other than the tree being part of the 23
+## Shown for exemptions other than the tree being part of the 23 species.
+# This event lets the user know that the tree is exempt under legislation and allows the user to 'exit' or 'restart' the application. 
 event: EDO1_exitscreen_4
 question: This tree is exempt!
 subquestion: |

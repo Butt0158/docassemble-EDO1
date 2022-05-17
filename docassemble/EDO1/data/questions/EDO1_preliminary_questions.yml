@@ -1,5 +1,7 @@
 ---
-# Welcome and discalimer screen, describing the application and giving the user an option to exit to EDO website.
+## Welcome and disclaimer screen which describes the application.
+# If user selects 'I accept', application proceeds to EDO1_district.
+# If user selects 'I do not accept', application proceeds to EDO website. 
 mandatory: true  
 Question: |
   **Welcome to Tree Ark!**
@@ -20,7 +22,8 @@ buttons:
   - I do not accept: exit 
     url: https://www.edo.org.au
 --- 
-# If the user accepts the application terms on the welcome screen, the application will proceed to this question. If the tree is outside of the area in red this will lead to exit screen 2 below.
+# If user selects 'No', application will lead to EDO1_exit_screen_1. 
+# If user selects 'Yes', application will proceed to EDO1_sigreg.
 question: |
     Is the tree located within the red area outlined below?
 subquestion: |
@@ -30,7 +33,10 @@ choices:
   - Yes: 'True'
   - No: 'Not Urban'
 ---
-# If the tree is located in the red area, the application will continue to this question which will give the user the option to save time if they already know the tree is significant or regulated.
+## Provides user opportunity to skip questions if they know the tree is either significant or regulated.
+# If user selects 'Significant', application proceeds to EDO1_significant.
+# If user selects 'Regulated', application proceeds to EDO1_regulated.
+# If user selects 'Unsure', application proceeds to EDO1_Part10.
 Question: |
   The tree might have special protection under the law. 
 subquestion: |
@@ -42,7 +48,7 @@ choices:
   - Unsure: 'Unsure' 
 under: PDI 2016 (SA) ss [3](http://www8.austlii.edu.au/cgi-bin/viewdoc/au/legis/sa/consol_act/pdaia2016415/s3.html) & [68](http://www8.austlii.edu.au/cgi-bin/viewdoc/au/legis/sa/consol_act/pdaia2016415/s68.html) / PDI (General) Regulations 2017 (SA) ss [3F(1)-(2)](http://classic.austlii.edu.au/au/legis/sa/consol_reg/pdair2017579/s3f.html)
 ---
-# Exit Screen if the user does not select the tree is within the area outlined in Red
+## Exit screen which provides opportunity to 'restart' application or 'exit' to the EDO website. 
 event: EDO1_exit_screen_1 
 question: "Uh oh!"
 subquestion: "The application only applies to trees located in urban South Australia"
