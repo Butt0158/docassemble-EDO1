@@ -32,8 +32,8 @@ include:
   - EDO1_exception_questions.yml
   - EDO1_preliminary_questions.yml
   - EDO1_Final_Questions.yml
-  - Attachment_A.yml
-  - Attachment_B.yml
+  - EDO1_Attachment_A.yml
+  - EDO1_Attachment_B.yml
 ---
 # Provides details for footer.
 default screen parts:
