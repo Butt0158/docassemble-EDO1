@@ -1,4 +1,4 @@
----
+--- 
 ## Welcome and disclaimer screen which describes the application.
 # If user selects 'I accept', application proceeds to EDO1_district.
 # If user selects 'I do not accept', application proceeds to EDO website. 
@@ -21,15 +21,15 @@ buttons:
   - I accept: continue
   - I do not accept: exit 
     url: https://www.edo.org.au
---- 
+---
 # If user selects 'No', application will lead to EDO1_exit_screen_1. 
 # If user selects 'Yes', application will proceed to EDO1_sigreg.
-question: |
-    Is the tree located within the red area outlined below?
+question: Is the tree located within the red area outlined below? 
+under: |
+  [FILE Map-1-Greater-Adelaide-Region-1.jpg, 150%] 
 subquestion: |
-  [FILE Map-1-Greater-Adelaide-Region-1.jpg, 115%]
-field: EDO1_district 
-choices:
+field: EDO1_district
+choices: 
   - Yes: 'True'
   - No: 'Not Urban'
 ---
