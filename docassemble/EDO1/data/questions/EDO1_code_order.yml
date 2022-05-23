@@ -35,6 +35,15 @@ include:
   - EDO1_Attachment_A.yml
   - EDO1_Attachment_B.yml
 ---
+#image source for the header
+objects:
+  - HeaderLogo: DAStaticFile.using(filename='Test-logo-17once.gif')
+---
+#for the header image
+mandatory: true
+code: |
+  set_parts(logo='<img src="' + HeaderLogo.url_for() + '" style="height: 55px;">')
+---
 # Provides details for footer.
 default screen parts:
   post: |
