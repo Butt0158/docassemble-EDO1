@@ -42,7 +42,7 @@ objects:
 #for the header image
 mandatory: true
 code: |
-  set_parts(logo='<img src="' + HeaderLogo.url_for() + '" style="height: 55px;">')
+  set_parts(logo='<img src="' + HeaderLogo.url_for() + '" style="height: 45px;">')
 ---
 # Provides details for footer.
 default screen parts:

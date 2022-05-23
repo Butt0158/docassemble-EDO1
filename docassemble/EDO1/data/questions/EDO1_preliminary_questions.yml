@@ -32,6 +32,10 @@ field: EDO1_district
 choices:
   - Yes: 'True'
   - No: 'Not Urban'
+features:
+  progress bar: True
+  show progress bar percentage: True
+progress: 7
 ---
 ## Provides user opportunity to skip questions if they know the tree is either significant or regulated.
 # If user selects 'Significant', application proceeds to EDO1_significant.
@@ -45,14 +49,21 @@ field: EDO1_sigreg
 choices:
   - Significant: 'Significant'
   - Regulated: 'Regulated'
-  - Unsure: 'Unsure' 
+  - Unsure: 'Unsure'
+features:
+  progress bar: True
+  show progress bar percentage: True
+progress: 14
 ---
 ## Exit screen which provides opportunity to 'restart' application or 'exit' to the EDO website. 
 event: EDO1_exit_screen_1 
-question: "Uh oh!"
+question: "Sorry!"
 subquestion: "The application only applies to trees located in urban South Australia"
 buttons:
   - Exit: exit
     url: https://www.edo.org.au
   - Restart: restart
+features:
+  progress bar: True
+progress: null
 --- 

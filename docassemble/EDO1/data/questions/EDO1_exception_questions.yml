@@ -54,7 +54,11 @@ buttons:
     image: Golden Willow
   - Peppercorn Tree: 'False'
     image: Peppercorn Tree
-  - None of These: primary 
+  - None of These: primary
+features:
+  progress bar: True
+  show progress bar percentage: True
+progress: 63
 ---
 image sets:
   freepik:
@@ -90,6 +94,9 @@ buttons:
   - Exit: exit
     url: https://www.edo.org.au
   - Restart: restart
+features:
+  progress bar: True
+progress: null
 --- 
 ## These questions will be asked on the same page using showif statements.
 question: |
@@ -115,7 +122,11 @@ fields:
     show if: EDO1_10_meters
     datatype: noyesradio
 # If the user selects 'Yes', application proceeds to EDO1_exitscreen_4.
-# If the user selects 'No', application proceeds to EDO1_department. 
+# If the user selects 'No', application proceeds to EDO1_department.
+features:
+  progress bar: True
+  show progress bar percentage: True
+progress: 70
 ---
 # Unless the tree is exempt for any of the bushfire hazard reasons application will continue to this question, if the user answers No application will proceed to final questions
 question: "Does the 'Department of Transport and Infrastructure' plan on removing this tree?"
@@ -123,6 +134,10 @@ field: EDO1_department
 choices:
   - Yes: 'Plan to remove'
   - No: 'False'
+features:
+  progress bar: True
+  show progress bar percentage: True
+progress: 77
 --- 
 ## Shown for exemptions other than the tree being part of the 23 species.
 # This event lets the user know that the tree is exempt under legislation and allows the user to 'exit' or 'restart' the application. 
@@ -134,4 +149,7 @@ buttons:
   - Exit: exit
     url: https://www.edo.org.au
   - Restart: restart
+features:
+  progress bar: True
+progress: null
 ---
