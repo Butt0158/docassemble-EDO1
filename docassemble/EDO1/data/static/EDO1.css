@@ -36,13 +36,6 @@ button colours:
     border-color: rgba(188,108,37,0.3);
     box-shadow: 0 10px 20px -8px rgba(0, 0, 0,.7)
 }
-
-.btn-primary:active {
-    color: rgb(0,0,0);
-    background-color: rgba(188,108,37,0.9);
-    border-color: rgba(188,108,37,0.3);
-    box-shadow: 0 10px 20px -8px rgba(0, 0, 0,.7)
-}
 .btn-primary:disabled {
     color: rgb(0,0,0);
     background-color: rgba(188,108,37,0.9);
