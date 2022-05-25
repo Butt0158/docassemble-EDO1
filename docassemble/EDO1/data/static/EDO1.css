@@ -24,7 +24,7 @@ button colours:
 }
   
 .btn-primary:hover{
-    color: rgb(0,0,0);
+    color: rgb(255,255,255);
     background-color: rgba(188,108,37,0.9);
     border-color: rgba(188,108,37,0.3);
     box-shadow: 0 10px 20px -8px rgba(0, 0, 0,.7)
@@ -66,9 +66,8 @@ button colours:
 
 .btn-danger{
     color: rgb(000,000,000);
-    background-color: rgb(147,31,29);
-    border-color: rgb(147,31,29);
-    box-shadow: 0 10px 20px -8px rgba(0, 0, 0,.7);
+    background-color: rgb(238,96,85);
+    border-color: rgb(238,96,85);
 }
 .btn-danger:hover{
     background-color: (191,6,3,0.9);

@@ -35,6 +35,7 @@ features:
   debug: False
   progress bar: True
   show progress bar percentage: True
+  hide standard menu: True
 ---
 # The code for this application is spread across multiple files. This section ensures the main code reads all these files. 
 # Also allows desired code area to be identified for easy editing (i.e for legislation update). 
@@ -50,6 +51,8 @@ include:
 default screen parts:
   post: |
     <div style="display: flex; height: 170px; align-items: flex-end">
+    <div style="margin: 5px"><img src="https://staff.flinders.edu.au/etc.clientlibs/flinders/clientlibs/clientlib-site/resources/images/flinderuni_main_logo_black.png" height="40">
+    </div>
     <div style="margin: 5px; margin-left: auto; margin-right: auto; font-size: 14px; font-family: Helvetica; color: ForestGreen">
     <small><i>
     Developed by Flinders University for the Environmental Defenders Office
