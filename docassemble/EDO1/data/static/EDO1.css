@@ -1,3 +1,10 @@
+button colours: 
+  "None of These": primary 
+  "Exit": danger 
+  "Continue": primary
+  "restart": warning
+
+
 .bg-primary{
      background-color: rgb(242,127,52) !important;
 }
@@ -19,17 +26,70 @@
 .btn-primary:hover{
     color: rgb(0,0,0);
     background-color: rgba(188,108,37,0.9);
-    border-color: rgba(224,190,64,0.3);
+    border-color: rgba(188,108,37,0.3);
     box-shadow: 0 10px 20px -8px rgba(0, 0, 0,.7)
+}
+
+.btn-primary:active {
+    color: rgb(0,0,0);
+    background-color: rgba(188,108,37,0.9);
+    border-color: rgba(188,108,37,0.3);
+    box-shadow: 0 10px 20px -8px rgba(0, 0, 0,.7)
+}
+
+.btn-primary:active {
+    color: rgb(0,0,0);
+    background-color: rgba(188,108,37,0.9);
+    border-color: rgba(188,108,37,0.3);
+    box-shadow: 0 10px 20px -8px rgba(0, 0, 0,.7)
+}
+.btn-primary:disabled {
+    color: rgb(0,0,0);
+    background-color: rgba(188,108,37,0.9);
+    border-color: rgba(188,108,37,0.3);
+    box-shadow: 0 10px 20px -8px rgba(0, 0, 0,.7)
+}
+
+.btn-primary:focus {
+    color: rgb(0,0,0);
+    background-color: rgba(188,108,37,0.9);
+    border-color: rgba(188,108,37,0.3);
+    box-shadow: 0 10px 20px -8px rgba(0, 0, 0,.7)
+}
+
+.btn-primary:active:focus {
+    color: rgb(0,0,0);
+    background-color: rgba(188,108,37,0.9);
+    border-color: rgba(188,108,37,0.3);
+    box-shadow: 0 10px 20px -8px rgba(0, 0, 0,.7)
+}
+
+.select-input {
+  color: rgb(0,0,0);
+  background-color: rgba(188,108,37,0.9);
+  border-color: rgba(188,108,37,0.3);
+  box-shadow: 0 10px 20px -8px rgba(0, 0, 0,.7)
 }
 
 .btn-danger{
     color: rgb(000,000,000);
-    background-color: rgb(56,163,165);
-    border-color: rgb(56,163,165);
+    background-color: rgb(147,31,29);
+    border-color: rgb(147,31,29);
     box-shadow: 0 10px 20px -8px rgba(0, 0, 0,.7);
 }
 .btn-danger:hover{
-    background-color: (210,56,73,0.7);
+    background-color: (191,6,3,0.9);
+    box-shadow: 0 10px 20px -8px rgba(0, 0, 0,.7);
+}
+
+.btn-warning{
+    color: rgb(0,0,0);
+    background-color: rgb(243,170,57);
+    border-color: rgb(243,192,83);
+}
+.btn-warning:hover{
+    color: rgb(0,0,0);
+    background-color: rgb(251,199,57,0.9);
+    border-color: rgb(251,199,57);
     box-shadow: 0 10px 20px -8px rgba(0, 0, 0,.7);
 }
