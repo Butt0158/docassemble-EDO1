@@ -10,9 +10,6 @@ field: EDO1_Part10
 choices:
   - Not Listed: 'Tree not listed'
   - Listed: 'Tree listed'
-features:
-  progress bar: True
-  show progress bar percentage: True
 progress: 21
 ---
 # If user selects 'Singular' or 'Multiple', application proceeds to EDO1_circumference.
@@ -22,9 +19,6 @@ field: EDO1_trunk
 choices: 
   - Singular: 'True'  
   - Multiple: 'Multiple'
-features:
-  progress bar: True
-  show progress bar percentage: True
 progress: 28
 ---
 ## This question is asked to categorise the tree according to parameters provided within legislation. 
@@ -38,9 +32,6 @@ choices:
   - Less than 2 meters: '<2'
   - 2 meters or more: '2+'
   - 3 meters or more: '3+'
-features:
-  progress bar: True
-  show progress bar percentage: True
 progress: 35
 --- 
 ## This question is only asked if the user selects 'multiple' in EDO1_trunk and when the user selects either '2 meters or more' / '3 meters or more' in EDO1_circumference.
@@ -53,48 +44,37 @@ datatype: radio
 choices: 
 - Yes: 'True'
 - No: 'Less than 625mm'
-features:
-  progress bar: True
-  show progress bar percentage: True
 progress: 42
 ---
 # This statement is provided to let the user know that the regulated tree is protected, however exemptions may still apply.
 # When user selects 'continue', application proceeds to EDO1_exemption_images.
 question: |
-  A regulated tree is protected under legislation. However, exemptions may still apply!
+  This tree appears to be a regulated tree and may be protected under the law. However, exceptions may still apply!
 subquestion: |
   Press continue to find out.
 field: EDO1_regulated
 button: 
 - continue: continue 'True'
-features:
-  progress bar: True
-  show progress bar percentage: True
 progress: 49
 ---
 ## This statement is provided to let the user know that the significant tree is protected, however exemptions may still apply. 
 # When user selects 'continue', application proceeds to EDO1_exemption_images.
 question: |
-   A significant tree is protected under legislation. However, exemptions may still apply!
+   This tree appears to be a significant tree and may be protected under the law. However, exceptions may still apply!
 subquestion: |
   Press continue to find out.
 field: EDO1_significant
 button: 
 - continue: continue 'True'
-features:
-  progress bar: True
-  show progress bar percentage: True
 progress: 56
 ---
 # Exit screen if the tree's trunk circumference is 'less than 2 meters' or trunk circumference is less than 625mm. 
 event: EDO1_exit_screen_3
 question: |
-  The tree is neither significant or regulated. No approval is required for removal. If you have further questions please contact the [Environmental Defenders Office](https://www.edo.org.au)
+  The tree is neither significant or regulated. This potentially means that no approval is required for removal. If you have further questions please contact the [Environmental Defenders Office](https://www.edo.org.au)
 buttons:
   - Exit: exit
     url: https://www.edo.org.au
   - Restart: restart
-features:
-  progress bar: True
 progress: null
 --- 

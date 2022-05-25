@@ -55,9 +55,6 @@ buttons:
   - Peppercorn Tree: 'False'
     image: Peppercorn Tree
   - None of These: primary
-features:
-  progress bar: True
-  show progress bar percentage: True
 progress: 63
 ---
 image sets:
@@ -89,20 +86,18 @@ image sets:
 ---
 # This event lets the user know that the tree is exempt under legislation and allows the user to 'exit' or 'restart' the application. 
 event: EDO1_trees_end
-question: The tree is exempt under legislation and therefore can be removed. If you have further questions please contact the [Environmental Defenders Office](https://www.edo.org.au)
+question: The tree is not protected under the law. It is likely that the tree can be removed. If you have further questions please contact the [Environmental Defenders Office](https://www.edo.org.au)
 buttons: 
   - Exit: exit
     url: https://www.edo.org.au
   - Restart: restart
-features:
-  progress bar: True
 progress: null
 --- 
 ## These questions will be asked on the same page using showif statements.
 question: |
-  Do any of the following exemptions apply?
+  Do any of the following exceptions apply?
 fields: 
-  - "Is the tree located in a medium or high risk bushfire Hazard area? If you are unsure please use this [link](https://sappa.plan.sa.gov.au/), Search for your address and see what bushfire overlays apply.": EDO1_Bushfire_Hazard_area
+  - "Is the tree located in a medium or high risk bushfire hazard area? If you are unsure please use this [link](https://sappa.plan.sa.gov.au/), Search for your address and see what bushfire overlays apply.": EDO1_Bushfire_Hazard_area
     datatype: yesnoradio
 # If the user selects 'Yes', application shows EDO1_fire_hazard
 # If the user selects 'No', application shows EDO1_10_meters
@@ -111,7 +106,7 @@ fields:
     show if: EDO1_Bushfire_Hazard_area
 # If the user selects 'Yes', application proceeds to EDO1_exitscreen_4. 
 # If the user selects 'No', application proceeds to EDO1_department. 
-  - "Does it appear that the tree is located within ten meters of an existing dwelling or in-Ground swimming pool": EDO1_10_meters
+  - "Does it appear that the tree is located within ten meters of an existing dwelling or in-ground swimming pool": EDO1_10_meters
     show if: 
       variable: EDO1_Bushfire_Hazard_area
       is: False
@@ -123,9 +118,6 @@ fields:
     datatype: noyesradio
 # If the user selects 'Yes', application proceeds to EDO1_exitscreen_4.
 # If the user selects 'No', application proceeds to EDO1_department.
-features:
-  progress bar: True
-  show progress bar percentage: True
 progress: 70
 ---
 # Unless the tree is exempt for any of the bushfire hazard reasons application will continue to this question, if the user answers No application will proceed to final questions
@@ -134,9 +126,6 @@ field: EDO1_department
 choices:
   - Yes: 'Plan to remove'
   - No: 'False'
-features:
-  progress bar: True
-  show progress bar percentage: True
 progress: 77
 --- 
 ## Shown for exemptions other than the tree being part of the 23 species.
@@ -144,12 +133,10 @@ progress: 77
 event: EDO1_exitscreen_4
 question: This tree is exempt!
 subquestion: |
-   The legislation does not protect this tree. No development approval is required for removal. 
+   The law does not protect this tree. This likely means that no development approval is required for removal. 
 buttons: 
   - Exit: exit
     url: https://www.edo.org.au
   - Restart: restart
-features:
-  progress bar: True
 progress: null
 ---

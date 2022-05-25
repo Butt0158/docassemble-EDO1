@@ -1,4 +1,13 @@
 ---
+#image source for the header
+objects:
+  - HeaderLogo: DAStaticFile.using(filename='Logo_V1.gif')
+---
+#for the header image
+mandatory: true
+code: |
+  set_parts(logo='<img src="' + HeaderLogo.url_for() + '" style="height: 45px;">')
+---
 # Provides a brief description of the application and the authors. 
 metadata:
   title: |
@@ -17,13 +26,15 @@ metadata:
     - organisation: Flinders University
     - name: Zac Caldicott-Millard 
     - organisation: Flinders University
-  revision_date: 2022-05-16
+  revision_date: 2022-05-25
 ---
 # Links the custom CSS file into the application.
 # Removes debugging and logging in features.
 features:
   css: EDO1.css
   debug: False
+  progress bar: True
+  show progress bar percentage: True
 ---
 # The code for this application is spread across multiple files. This section ensures the main code reads all these files. 
 # Also allows desired code area to be identified for easy editing (i.e for legislation update). 
@@ -34,15 +45,6 @@ include:
   - EDO1_Final_Questions.yml
   - EDO1_Attachment_A.yml
   - EDO1_Attachment_B.yml
----
-#image source for the header
-objects:
-  - HeaderLogo: DAStaticFile.using(filename='Test-logo-17once.gif')
----
-#for the header image
-mandatory: true
-code: |
-  set_parts(logo='<img src="' + HeaderLogo.url_for() + '" style="height: 45px;">')
 ---
 # Provides details for footer.
 default screen parts:

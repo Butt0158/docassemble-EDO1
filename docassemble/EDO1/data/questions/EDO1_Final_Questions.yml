@@ -14,21 +14,15 @@ fields:
     - The ringbarking, topping, or lopping of a tree: 'False'
     - Any other substantial damage to a tree: 'False'
     - Other: 'Out of Scope'
-features:
-  progress bar: True
-  show progress bar percentage: True
 progress: 84
 ---
 # If user selects 'Yes', application will proceed to EDO1_Output_A.
 # If user selects 'No', application will proceed to EDO1_Output_B. 
-question: Is the activity a matter of urgency to protect any person or building?
+question: Does it appear that the activity is a matter of urgency to protect any person or building?
 field: EDO1_activity_urgency 
 choices:
   - Yes: 'Urgent'
   - No: 'Not Urgent'
-features:
-  progress bar: True
-  show progress bar percentage: True
 progress: 92
 ---
 ## Only asked when 'The severing of branches, limbs, stems, or trunk of a tree' is selected in EOD1_actions.
@@ -39,9 +33,6 @@ field: EDO1_30_removal
 choices:
   - Yes: '<30%'
   - No: 'False'
-features:
-  progress bar: True
-  show progress bar percentage: True
 progress: 88
 ---
 # If the user selects 'Yes', application proceeds to EDO1_Output_A.
@@ -51,9 +42,6 @@ field: EDO1_wood_removal
 choices:
   - Yes: 'Dead wood'
   - No: 'False'
-features:
-  progress bar: True
-  show progress bar percentage: True
 progress: 92
 ---
 # If the user selects 'Yes', application proceeds to EDO1_Output_A.
@@ -63,23 +51,18 @@ field: EDO1_material_risk
 choices:
   - Yes: 'Material Risk'
   - No: 'Not Material Risk'
-features:
-  progress bar: True
-  show progress bar percentage: True
 progress: 96
 ---
 # Exit screen shown when user selects 'Other' in EDO1_actions. Provides opportunity to 'exit' to the EDO website or 'restart' the application. 
 event: EDO1_out_of_scope
 question: | 
-  Sorry!
+  Uh! Oh!
 subquestion: |
-  This action is outside the scope of Tree Ark. Please contact the EDO for more information. 
+  Sorry! This action is outside the scope of Tree Ark. Please contact the EDO for more information. 
 buttons:
   - Exit: exit
     url: https://www.edo.org.au
   - Restart: restart
-features:
-  progress bar: True
 progress: null
 ---
 ## This is Output A for the application.
@@ -87,15 +70,12 @@ progress: null
 # If the user selects 'No copy', application proceeds to EDO1_exit_screen_finale.
 field: EDO1_output_A
 question: |
-  There is no need for planning approval.
+  There no need for planning approval.
 subquestion: |
-  This means that the activity being undertaken to the tree is permitted. You may wish to reach out to your [local council](https://www.lga.sa.gov.au/sa-councils/councils-listing) if you want more information. If any areas of this application have raised questions for you, please contact the [Environmental Defenders Office](https://www.edo.org.au/). If you wish to seek professional legal advice you can contact the [Legal Services Commission of South Australia](https://lsc.sa.gov.au/).
+  This means that the activity being undertaken to the tree is likely permitted. You may wish to reach out to your [local council](https://www.lga.sa.gov.au/sa-councils/councils-listing) if you want more information. If any areas of this application have raised questions for you, please contact the [Environmental Defenders Office](https://www.edo.org.au/). If you wish to seek additional legal advice you can contact the [Legal Services Commission of South Australia](https://lsc.sa.gov.au/).
 buttons:
   - I want a copy: 'CopyA'
   - No copy: 'No CopyA'
-features:
-  progress bar: True
-  show progress bar percentage: True
 progress: 100
 ---
 ## This is Output B for the application.
@@ -116,14 +96,11 @@ subquestion: |
   4. Press “more options” under search for an activity
   5. Press “tree damaging activity”
 
-  If there is no application listed, this activity may be a breach of planning laws. There are penalties if planning affecting trees is undertaken without approval. You may wish to reach out to your [local council](https://www.lga.sa.gov.au/sa-councils/councils-listing) if you want more information. These penalties are found under section 215 of the Planning, Development, and Infrastructure Act 2016 and can incur a maximum penalty of $120,000. If any areas of this application have raised questions for you, please contact the [Environmental Defenders Office](https://www.edo.org.au/). If you wish to seek professional legal advice you can contact the [Legal Services Commission of South Australia](https://lsc.sa.gov.au/).
+  If there is no application listed, this activity may be a breach of planning laws. There are penalties if planning affecting trees is undertaken without approval. You may wish to reach out to your [local council](https://www.lga.sa.gov.au/sa-councils/councils-listing) if you want more information. These penalties are found under section 215 of the Planning, Development, and Infrastructure Act 2016 and can incur a maximum penalty of $120,000. If any areas of this application have raised questions for you, please contact the [Environmental Defenders Office](https://www.edo.org.au/). If you wish to seek additional legal advice you can contact the [Legal Services Commission of South Australia](https://lsc.sa.gov.au/).
  
 buttons:
   - I want a copy: 'CopyB'
   - No copy: 'No CopyB'
-features:
-  progress bar: True
-  show progress bar percentage: True
 progress: 100
 ---
 # Final exit screen once user has completed the application. Provides options to 'exit' to the EDO website or 'restart' the application.
@@ -133,7 +110,5 @@ buttons:
   - Exit: exit
     url: https://www.edo.org.au
   - Restart: restart
-features:
-  progress bar: True
 progress: null
 ---
