@@ -4,9 +4,9 @@ event: Attachment_B
 question: |
   Thanks for using Tree Ark. Please find document below with the output.
 attachment:
-  name: from Tree Ark
-  filename: Output_B
-  docx template file: EDO_Output_B.docx
+  name: from Tree Ark with your output
+  filename: Attachment_B
+  docx template file: EDO_Attachment_B.docx
   valid formats:
     - pdf
     
