@@ -8,11 +8,11 @@ fields:
   - no label: EDO1_actions
     datatype: radio
     choices:
-    - The killing or destruction of a tree: 'False'
-    - The removal of a tree: 'False'
+    - The killing or destruction of a tree
+    - The removal of a tree
     - The severing of branches, limbs, stems, or trunk of a tree: 'Maintenance Pruning'
-    - The ringbarking, topping, or lopping of a tree: 'False'
-    - Any other substantial damage to a tree: 'False'
+    - The ringbarking, topping, or lopping of a tree
+    - Any other substantial damage to a tree
     - Other: 'Out of Scope'
 progress: 84
 ---
