@@ -3,7 +3,7 @@
 # If the user selects a tree listed, application proceeds to EDO1_trees_end. 
 # If the user selects 'None of these', the application proceeds to EDO1_Bushfire_Hazard_area. 
 question: |
-   Is the tree one of the following 23 species?
+  Is the tree one of the following 23 species?
 subquestion: |
   If not, select **'None of These'** located in the bottom right
 field: EDO1_exemption_images
@@ -36,8 +36,8 @@ buttons:
     image: Monterey Pine
   - London Plane: 'False'
     image: London Plane
-  - White poplar: 'False'
-    image: White popular
+  - White Poplar: 'False'
+    image: White Poplar
   - Lombardy Poplar: 'False'
     image: Lombardy Poplar
   - Black Locust: 'False'
@@ -74,7 +74,7 @@ image sets:
       Prickly-leaved Paperback: Melaleuca_styphelioides_Prickly-leaved_Paperback.jpg 
       Monterey Pine: Pinus_Radiata_Radiata_Pine_Monterey_Pine.jpg
       London Plane: Platanus_x_acerifolia_London_Plane.jpg
-      White poplar: Populus_alba_White_poplar.jpg
+      White Poplar: Populus_alba_White_poplar.jpg
       Lombardy Poplar: Populus_nigra_var._italica_Lombardy_Poplar.jpg
       Black Locust: Black_Locust.jpeg
       Weeping Willow: Salix_babylonica_Weeping_Willow.jpg
@@ -86,7 +86,10 @@ image sets:
 ---
 # This event lets the user know that the tree is exempt under legislation and allows the user to 'exit' or 'restart' the application. 
 event: EDO1_trees_end
-question: The tree is not protected under the law. It is likely that the tree can be removed. If you have further questions please contact the [Environmental Defenders Office](https://www.edo.org.au)
+question: |
+  The tree is not protected under the law. 
+subquestion: |
+  It is likely that the tree can be removed. If you have further questions please contact the [Environmental Defenders Office](https://www.edo.org.au).
 buttons: 
   - Exit: exit
     url: https://www.edo.org.au
@@ -97,7 +100,7 @@ progress: null
 question: |
   Do any of the following exceptions apply?
 fields: 
-  - "Is the tree located in a medium or high risk bushfire hazard area? If you are unsure please use this [link](https://sappa.plan.sa.gov.au/), Search for your address and see what bushfire overlays apply.": EDO1_Bushfire_Hazard_area
+  - "Is the tree located in a medium or high risk bushfire hazard area? If you are unsure, please use this [link](https://sappa.plan.sa.gov.au/), search for your address and see what bushfire overlays apply.": EDO1_Bushfire_Hazard_area
     datatype: yesnoradio
 # If the user selects 'Yes', application shows EDO1_fire_hazard
 # If the user selects 'No', application shows EDO1_10_meters
@@ -120,8 +123,11 @@ fields:
 # If the user selects 'No', application proceeds to EDO1_department.
 progress: 70
 ---
-# Unless the tree is exempt for any of the bushfire hazard reasons application will continue to this question, if the user answers No application will proceed to final questions
-question: "Does the 'Department of Transport and Infrastructure' plan on removing this tree?"
+## Unless the tree is exempt for any of the bushfire hazard reasons, application will continue to this question. 
+# If the user selects 'Yes', application proceeds to EDO1_exitscreen_4.
+# If the user selects 'No', application proceeds to EDO1_actions.
+question: |
+  Does the 'Department of Transport and Infrastructure' plan on removing this tree?
 field: EDO1_department
 choices:
   - Yes: 'Plan to remove'
@@ -131,9 +137,10 @@ progress: 77
 ## Shown for exemptions other than the tree being part of the 23 species.
 # This event lets the user know that the tree is exempt under legislation and allows the user to 'exit' or 'restart' the application. 
 event: EDO1_exitscreen_4
-question: This tree is exempt!
+question: |
+  This tree is exempt!
 subquestion: |
-   The law does not protect this tree. This likely means that no development approval is required for removal. 
+  The law does not protect this tree. This likely means that no development approval is required for removal. 
 buttons: 
   - Exit: exit
     url: https://www.edo.org.au

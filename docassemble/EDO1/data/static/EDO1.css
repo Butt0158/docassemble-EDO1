@@ -89,3 +89,9 @@ button colours:
     border-color: rgb(251,199,57);
     box-shadow: 0 10px 20px -8px rgba(0, 0, 0,.7);
 }
+
+/* This part sets the colours for the progress bar*/
+.progress-bar{
+    color: rgba(0,0,0);
+    background-color: rgba(188,108,37,0.9)
+}

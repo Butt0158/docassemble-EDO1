@@ -1,14 +1,14 @@
 ---
-#image source for the header
+#Source for image used within header.
 objects:
-  - HeaderLogo: DAStaticFile.using(filename='Logo_V1.gif')
+  - HeaderLogo: DAStaticFile.using(filename='Animated_Logo.gif')
 ---
-#for the header image
+#Code that controls the header and includes the header image. 
 mandatory: true
 code: |
   set_parts(logo='<img src="' + HeaderLogo.url_for() + '" style="height: 45px;">')
 ---
-# Provides a brief description of the application and the authors. 
+#Provides a brief description of the application and the authors. 
 metadata:
   title: |
     Tree Ark
@@ -26,7 +26,7 @@ metadata:
     - organisation: Flinders University
     - name: Zac Caldicott-Millard 
     - organisation: Flinders University
-  revision_date: 2022-05-25
+  revision_date: 2022-05-27
 ---
 # Links the custom CSS file into the application.
 # Removes debugging and logging in features.
@@ -67,7 +67,7 @@ code: |
   if EDO1_sigreg == 'Regulated':
     EDO1_regulated
   if EDO1_sigreg == 'Unsure':
-    if EDO1_Part10  == 'Tree listed':
+    if EDO1_Part10 == 'Tree listed':
       EDO1_significant
     if EDO1_Part10 == 'Tree not listed':
       EDO1_trunk

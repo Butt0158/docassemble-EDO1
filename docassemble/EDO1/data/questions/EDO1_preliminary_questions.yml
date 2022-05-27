@@ -22,10 +22,10 @@ buttons:
   - I do not accept: exit 
     url: https://www.edo.org.au
 --- 
-# If user selects 'No', application will lead to EDO1_exit_screen_1. 
+# If user selects 'No', application will proceed to EDO1_exit_screen_1. 
 # If user selects 'Yes', application will proceed to EDO1_sigreg.
 question: |
-    Is the tree located within the red area outlined below?
+  Is the tree located within the red area outlined below?
 subquestion: |
   [FILE Map-1-Greater-Adelaide-Region-1.jpg, 115%]
 field: EDO1_district 
@@ -41,7 +41,7 @@ progress: 7
 Question: |
   The tree might have special protection under the law. 
 subquestion: |
-  Within legislation a tree may be 'significant' or 'regulated'. These terms  have **distinct legal meanings**. If these terms are unfamiliar, please select 'unsure'.    
+  Within legislation a tree may be 'significant' or 'regulated'. These terms have **distinct legal meanings**. If these terms are unfamiliar, please select 'unsure'.    
 field: EDO1_sigreg
 choices:
   - Significant: 'Significant'
@@ -51,8 +51,10 @@ progress: 14
 ---
 ## Exit screen which provides opportunity to 'restart' application or 'exit' to the EDO website. 
 event: EDO1_exit_screen_1 
-question: "Uh Oh!"
-subquestion: "Sorry! This application only applies to trees located in urban South Australia."
+question: |
+  Sorry!
+subquestion: |
+  This application only applies to trees located in urban South Australia.
 buttons:
   - Exit: exit
     url: https://www.edo.org.au

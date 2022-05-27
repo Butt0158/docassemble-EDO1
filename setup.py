@@ -44,11 +44,11 @@ def find_package_data(where='.', package='', exclude=standard_exclude, exclude_d
 
 setup(name='docassemble.EDO1',
       version='0.0.1',
-      description=('Environmental Defenders Office Application'),
+      description=('Tree Ark'),
       long_description="# docassemble.EDO1\r\nEnvironmental Defenders Office application titled 'Tree Ark'\r\n## Authors\r\nJordan Buttery, butt0158@flinders.edu.au\r\nLachlan Cromb, crom0038@flinders.edu.au\r\nAdarsh Jacob, jaco0194@flinders.edu.au\r\nRobert Cousins, cous0060@flinders.edu.au\r\nZachary Caldicott-Millard, cald0093@flinders.edu.au",
       long_description_content_type='text/markdown',
       author='Law in a Digital Age EDO1',
-      author_email='butt0158@flinders.edu.au',
+      author_email='',
       license='The MIT License (MIT)',
       url='https://docassemble.org',
       packages=find_packages(),

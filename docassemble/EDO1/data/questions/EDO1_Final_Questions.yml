@@ -18,7 +18,8 @@ progress: 84
 ---
 # If user selects 'Yes', application will proceed to EDO1_Output_A.
 # If user selects 'No', application will proceed to EDO1_Output_B. 
-question: Does it appear that the activity is a matter of urgency to protect any person or building?
+question: |
+  Does it appear that the activity is a matter of urgency to protect any person or building?
 field: EDO1_activity_urgency 
 choices:
   - Yes: 'Urgent'
@@ -28,7 +29,8 @@ progress: 92
 ## Only asked when 'The severing of branches, limbs, stems, or trunk of a tree' is selected in EOD1_actions.
 # If the user selects 'Yes', application proceeds to EDO1_Output_A.
 # If the user selects 'No', application proceeds to EDO1_wood_removal. 
-question: Does it appear that less than 30% of the tree is being removed?
+question: |
+  Does it appear that less than 30% of the tree is being removed?
 field: EDO1_30_removal
 choices:
   - Yes: '<30%'
@@ -37,7 +39,8 @@ progress: 88
 ---
 # If the user selects 'Yes', application proceeds to EDO1_Output_A.
 # If the user selects 'No', application proceeds to EDO1_material_risk.
-question: Does it appear that dead wood is being removed?
+question: |
+  Does it appear that dead wood is being removed?
 field: EDO1_wood_removal
 choices:
   - Yes: 'Dead wood'
@@ -46,7 +49,8 @@ progress: 92
 ---
 # If the user selects 'Yes', application proceeds to EDO1_Output_A.
 # If the user selects 'No', application proceeds to EDO1_Output_B. 
-question: Does it appear that the branch(s) pose a material risk to buildings or persons?
+question: |
+  Does it appear that the branch(s) pose a material risk to buildings or persons?
 field: EDO1_material_risk
 choices:
   - Yes: 'Material Risk'
@@ -55,10 +59,10 @@ progress: 96
 ---
 # Exit screen shown when user selects 'Other' in EDO1_actions. Provides opportunity to 'exit' to the EDO website or 'restart' the application. 
 event: EDO1_out_of_scope
-question: | 
-  Uh! Oh!
+question: |
+  Sorry!
 subquestion: |
-  Sorry! This action is outside the scope of Tree Ark. Please contact the EDO for more information. 
+  This action is outside the scope of Tree Ark. Please contact the EDO for more information. 
 buttons:
   - Exit: exit
     url: https://www.edo.org.au
@@ -70,9 +74,12 @@ progress: null
 # If the user selects 'No copy', application proceeds to EDO1_exit_screen_finale.
 field: EDO1_output_A
 question: |
-  There no need for planning approval.
+  It appears that planning approval is not required for the actions you selected. 
 subquestion: |
-  This means that the activity being undertaken to the tree is likely permitted. You may wish to reach out to your [local council](https://www.lga.sa.gov.au/sa-councils/councils-listing) if you want more information. If any areas of this application have raised questions for you, please contact the [Environmental Defenders Office](https://www.edo.org.au/). If you wish to seek additional legal advice you can contact the [Legal Services Commission of South Australia](https://lsc.sa.gov.au/).
+  This means that the activity being undertaken to the tree is likely permitted. You may wish to reach out to your [local council](https://www.lga.sa.gov.au/sa-councils/councils-listing) if you want further information. 
+  
+  If any areas of this application have raised questions for you, please contact the [Environmental Defenders Office](https://www.edo.org.au/). 
+  If you wish to seek additional legal advice you can contact the [Legal Services Commission of South Australia](https://lsc.sa.gov.au/).
 buttons:
   - I want a copy: 'CopyA'
   - No copy: 'No CopyA'
@@ -85,8 +92,7 @@ field: EDO1_output_B
 question: |
   It is likely that the damaging activities you selected are being undertaken without planning approval.
 subquestion: |
-  Go to [PlanSA](https://plan.sa.gov.au/) to check address for information about any planning application decided or about to be decided. You can also check the planning policies which apply to any application found [here](https://plan.sa.gov.au/resources/planning/state_planning_policies).  
-
+  Go to [PlanSA](https://plan.sa.gov.au/) to check the address for information about any planning application decided or about to be decided. 
 
   Please follow the steps below: 
 
@@ -96,8 +102,13 @@ subquestion: |
   4. Press “more options” under search for an activity
   5. Press “tree damaging activity”
 
-  If there is no application listed, this activity may be a breach of planning laws. There are penalties if planning affecting trees is undertaken without approval. You may wish to reach out to your [local council](https://www.lga.sa.gov.au/sa-councils/councils-listing) if you want more information. These penalties are found under section 215 of the Planning, Development, and Infrastructure Act 2016 and can incur a maximum penalty of $120,000. If any areas of this application have raised questions for you, please contact the [Environmental Defenders Office](https://www.edo.org.au/). If you wish to seek additional legal advice you can contact the [Legal Services Commission of South Australia](https://lsc.sa.gov.au/).
- 
+  If there is no application listed, this activity may be a breach of planning laws and penalties may apply. These penalties are found under section 215 of the [Planning, Development, and Infrastructure Act 2016](http://www8.austlii.edu.au/cgi-bin/viewdoc/au/legis/sa/consol_act/pdaia2016415/s215.html) and can incur a maximum penalty of $120,000. 
+  
+  You can also check the planning policies which apply to any application found [here](https://plan.sa.gov.au/resources/planning/state_planning_policies).
+  Alternatively, you may wish to reach out to your [local council](https://www.lga.sa.gov.au/sa-councils/councils-listing) if you want more information. 
+  
+  If any areas of this application have raised questions for you, please contact the [Environmental Defenders Office](https://www.edo.org.au/). 
+  If you wish to seek additional legal advice you can contact the [Legal Services Commission of South Australia](https://lsc.sa.gov.au/).    
 buttons:
   - I want a copy: 'CopyB'
   - No copy: 'No CopyB'
@@ -105,7 +116,8 @@ progress: 100
 ---
 # Final exit screen once user has completed the application. Provides options to 'exit' to the EDO website or 'restart' the application.
 event: EDO1_exit_screen_finale
-question: "Thank you for using Tree Ark"
+question: |
+  Thank you for using Tree Ark!
 buttons:
   - Exit: exit
     url: https://www.edo.org.au
