@@ -1,5 +1,5 @@
 # Tree Ark
-A docassemble extension made in collaboration with the the Enviromental Defenders Office with the purpose of simplying the law surrounding tree protection in urban South Australia 
+A docassemble extension made in collaboration with the the Enviromental Defenders Office with the purpose of simplifying the law surrounding tree protection in urban South Australia 
 ## Authors
 Jordan Buttery, butt0158@flinders.edu.au
 Adarsh Jacob, jaco0194@flinders.edu.au
